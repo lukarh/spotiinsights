@@ -8,6 +8,10 @@ A live web-application deployed on Heroku that interacts with Spotify's Web API 
 
 ## [Click Here to View the Live Web-Application](https://spotiinsights-7ca95654505a.herokuapp.com/spotify-overview)
 
+Picture of Website:
+
+![website](https://imgur.com/a/kVew5HD)
+
 ## Development
 
 - Code: JavaScript using MERN Stack
