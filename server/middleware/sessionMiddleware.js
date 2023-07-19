@@ -19,7 +19,7 @@ const configureSession = (app) => {
             ttl: 1 * 60 * 60 // = 1 hour
         }),
         cookie: {
-            secure: true,
+            secure: false, // change to true for production
             maxAge: ttl
         }
     }))
