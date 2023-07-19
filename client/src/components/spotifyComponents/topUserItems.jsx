@@ -24,8 +24,8 @@ const TopUserItems = ({ timeRange, setTimeRange }) => {
         setTimeRange(newTimeRange)
 
         try {
-            const response = await axios.get(`/api/spotify/top-artists?timeRange=${newTimeRange}`, { withCredentials: true })
-            // const response = await axios.get(`http://localhost:5000/api/spotify/top-artists?timeRange=${newTimeRange}`, { withCredentials: true })
+            // const response = await axios.get(`/api/spotify/top-artists?timeRange=${newTimeRange}`, { withCredentials: true })
+            const response = await axios.get(`http://localhost:5000/api/spotify/top-artists?timeRange=${newTimeRange}`, { withCredentials: true })
             const { artistsData } = response.data
 
             calculateAvgArtistsPopularityRating(artistsData.items)
@@ -121,8 +121,8 @@ const TopUserItems = ({ timeRange, setTimeRange }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
         const fetchUserSpotifyData = async () => {
             try {
-                const response = await axios.get(`/api/spotify/top-artists?timeRange=medium_term`, { withCredentials: true })
-                // const response = await axios.get(`http://localhost:5000/api/spotify/top-artists?timeRange=medium_term`, { withCredentials: true })
+                // const response = await axios.get(`/api/spotify/top-artists?timeRange=medium_term`, { withCredentials: true })
+                const response = await axios.get(`http://localhost:5000/api/spotify/top-artists?timeRange=medium_term`, { withCredentials: true })
 
                 const { artistsData } = response.data
 

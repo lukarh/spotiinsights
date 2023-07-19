@@ -30,8 +30,8 @@ const loginSpotify = async (req, res) => {
         response_type: "code",
         client_id: spotify_client_id,
         scope: scope,
-        // redirect_uri: "http://localhost:3000/auth/redirect",
-        redirect_uri: "https://spotiinsights-7ca95654505a.herokuapp.com/redirect",
+        redirect_uri: "http://localhost:3000/auth/redirect",
+        // redirect_uri: "https://spotiinsights-7ca95654505a.herokuapp.com/redirect",
         state: state
     })
     return res.status(200).send({ redirectURL: 'https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString() })
@@ -59,8 +59,8 @@ const getAccessToken = async (req, res) => {
             url: 'https://accounts.spotify.com/api/token',
             data: new URLSearchParams({
               code: code,
-            //   redirect_uri: "http://localhost:3000/auth/redirect", 
-              redirect_uri: "https://spotiinsights-7ca95654505a.herokuapp.com/redirect",
+              redirect_uri: "http://localhost:3000/auth/redirect", 
+            //   redirect_uri: "https://spotiinsights-7ca95654505a.herokuapp.com/redirect",
               grant_type: 'authorization_code'
             }),
             headers: {

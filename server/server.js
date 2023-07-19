@@ -11,21 +11,20 @@ configureSession(app)
 
 app.use(cors({ 
     credentials: true, 
-    // origin: "http://localhost:3000" 
-    origin: "https://spotiinsights-7ca95654505a.herokuapp.com/", 
+    origin: "http://localhost:3000",
     methods: "GET, POST, PUT, DELETE"
 }))
 
-app.set("trust proxy", 1)
+// app.set("trust proxy", 1)
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Credentials", true);
-    res.header("Access-Control-Allow-Origin", "https://spotiinsights-7ca95654505a.herokuapp.com/");
-    res.header("Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-HTTP-Method-Override, Set-Cookie, Cookie");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    next();  
- });    // --------------- SECOND CHANGE -------------------
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Credentials", true);
+//     res.header("Access-Control-Allow-Origin", "https://spotiinsights-7ca95654505a.herokuapp.com/");
+//     res.header("Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-HTTP-Method-Override, Set-Cookie, Cookie");
+//     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+//     next();  
+//  });   
 
 const authRoutes = require('./routes/authRoutes')
 const spotifyRoutes = require('./routes/spotifyRoutes')
@@ -33,8 +32,7 @@ const spotifyRoutes = require('./routes/spotifyRoutes')
 app.use('/auth', authRoutes)
 app.use('/api/spotify', spotifyRoutes)
 
-console.log(process.env.NODE_ENV)
-console.log(__dirname)
+
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')))
     const indexPath = path.join(__dirname, '../client/build', 'index.html');

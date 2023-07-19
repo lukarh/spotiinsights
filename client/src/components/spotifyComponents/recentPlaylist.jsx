@@ -85,8 +85,8 @@ const RecentPlaylist = () => {
 
         const fetchUserSpotifyData = async () => {
             try {
-                const response = await axios.get(`/api/spotify/recently-played`, { withCredentials: true })
-                // const response = await axios.get(`http://localhost:5000/api/spotify/recently-played`, { withCredentials: true })
+                // const response = await axios.get(`/api/spotify/recently-played`, { withCredentials: true })
+                const response = await axios.get(`http://localhost:5000/api/spotify/recently-played`, { withCredentials: true })
                 const { recentPlaylistData, trackFeaturesData } = response.data
 
                 const propertyStateMap = {
