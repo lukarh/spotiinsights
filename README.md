@@ -6,11 +6,11 @@ A live web-application deployed on Heroku that interacts with Spotify's Web API 
 ## Languages, Tools, and Libraries/Packages
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-## [Click Here to View the Live Web-Application](https://spotiinsights-7ca95654505a.herokuapp.com/spotify-overview)
+## [Click Here to View the Live Web-Application - Might take awhile to load](https://spotiinsights-7ca95654505a.herokuapp.com/spotify-overview)
 
 Picture of Website:
 
-![website](https://imgur.com/a/kVew5HD)
+![image](https://github.com/lukarh/spotiinsights/assets/65103724/b2ad8905-3d47-4eb2-877a-b34e1835eb98)
 
 ## Development
 
