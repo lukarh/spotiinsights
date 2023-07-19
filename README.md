@@ -26,7 +26,11 @@ After installing Node.js, clone the repository and install the dependencies of t
 
 `$ cd client` then `$ npm install` then `$ npm start` to run the client
 
+Open `http://localhost:3000` to view the application in your browser.
+
 `$ cd server` then `$ npm install` then `$ nodemon` to run the server
+
+Host the server locally on your computer.
 
 ### Application Credentials
 
