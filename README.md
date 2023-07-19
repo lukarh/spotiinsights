@@ -28,20 +28,11 @@ After installing Node.js, clone the repository and install the dependencies of t
 
 ### Application Credentials
 
-This repository does not contain credentials for obvious reasons. To run this app locally, you will have to provide your own credentials by registering for Spotify's Web API through their [Spotify for Developer's Documentation](https://developer.spotify.com/)
+This repository does not contain credentials for obvious reasons. To run this app locally, you will have to use your own credentials by registering for Spotify's Web API. Refer to the [Offical Spotify Documentation for Developers](https://developer.spotify.com/).
 
 On the [Spotify Developer's Dashboard](https://developer.spotify.com/dashboard), goto your registered app and register the following Redirect URIs:
 
 - http://localhost:3000/redirect
-
-If you do not want to run MongoDB, goto the `sessionMiddleware.js` in the server folder and comment out the following lines:
-
-`
-store: MongoStore.create({
-            mongoUrl: process.env.MONGODB_SESSIONS_URI,
-            ttl: 1 * 60 * 60 // = 1 hour
-        }),
-`
 
 Once you've registered for Spotify's Developer API, create a .env file in the server folder and put in your following credentials:
 

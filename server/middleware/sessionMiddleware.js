@@ -14,10 +14,10 @@ const configureSession = (app) => {
         secret: process.env.SERVER_SECRET_KEY,
         resave: false,
         saveUninitialized: false,
-        store: MongoStore.create({
-            mongoUrl: process.env.MONGODB_SESSIONS_URI,
-            ttl: 1 * 60 * 60 // = 1 hour
-        }),
+        // store: MongoStore.create({
+        //     mongoUrl: process.env.MONGODB_SESSIONS_URI,
+        //     ttl: 1 * 60 * 60 // = 1 hour
+        // }),
         cookie: {
             secure: false, // change to true for production
             maxAge: ttl
