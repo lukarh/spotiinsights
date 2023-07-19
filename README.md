@@ -23,6 +23,7 @@ This app runs on Node.js and you can find instructions on how to install Node.js
 After installing Node.js, clone the repository and install the dependencies of the client and server:
 
 `$ cd client` then `npm install`
+
 `$ cd server` then `npm install`
 
 ### Application Credentials
@@ -37,8 +38,20 @@ If you do not want to run MongoDB, goto the `sessionMiddleware.js` in the server
 
 `
 store: MongoStore.create({
+
             mongoUrl: process.env.MONGODB_SESSIONS_URI,
+
             ttl: 1 * 60 * 60 // = 1 hour
+
         }),
+`
+
+Once you've registered for Spotify's Developer API, create a .env file in the server folder and fill in your following credentials:
+`
+SPOTIFY_CLIENT_ID = "your-spotify-client-id"
+
+SPOTIFY_CLIENT_SECRET = "your-spotify-client-secret"
+
+SERVER_SECRET_KEY = "your-secret-key"
 `
 
