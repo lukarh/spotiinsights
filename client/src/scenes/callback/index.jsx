@@ -13,8 +13,8 @@ const Callback = () => {
             if (code) {
                 try {
                     // const baseURL = window.location.origin
-                    const response = await axios.get(`/auth/callback?code=${code}`, { withCredentials: true })
-                    // const response = await axios.get(`http://localhost:5000/auth/callback?code=${code}`, { withCredentials: true })
+                    // const response = await axios.get(`/auth/callback?code=${code}`, { withCredentials: true })
+                    const response = await axios.get(`http://localhost:5000/auth/callback?code=${code}`, { withCredentials: true })
                     
                     console.log('the response', response.status)
                     if (response.status === 200) {

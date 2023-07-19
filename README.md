@@ -43,7 +43,7 @@ store: MongoStore.create({
         }),
 `
 
-Once you've registered for Spotify's Developer API, create a .env file in the server folder and fill in your following credentials:
+Once you've registered for Spotify's Developer API, create a .env file in the server folder and put in your following credentials:
 
 `SPOTIFY_CLIENT_ID = "your-spotify-client-id"`
 
