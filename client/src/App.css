@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: black;
+  /* background: linear-gradient(to bottom, #F0BE59, #FF4F86); */
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* CSS for Scrollbar */
+/* The main scrollbar track */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar track */
+}
+
+/* The draggable scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #232323; 
+  border-radius: 15px;
+}
+
+/* When hovering over the scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #232323; 
+}
+
+/* The scrollbar track when it's in the track piece not covered by the thumb */
+::-webkit-scrollbar-track {
+  background-color: #121212; 
+  border-radius: 15px;
+}
+
+/* The scrollbar track when it's in the track piece covered by the thumb */
+::-webkit-scrollbar-track-piece {
+  background-color: #121212; 
+  border-radius: 15px;
+}
+
+/* LOGIN PAGE CSS */
+
+.login-container {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  /* height: 50%; */
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px 10px rgba(255,255,255,0.3);
+}
+
+@font-face {
+  font-family: 'CircularSpotifyText';
+  src: url('../public/fonts/CircularSpotifyTxT-Light.ttf') format('truetype');
+}
