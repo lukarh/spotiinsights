@@ -66,7 +66,7 @@ const Home = () => {
 
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginTop: "auto", marginBottom: "20px"}}>
                     <p>Powered by <a href="https://developer.spotify.com/documentation/web-api" rel="noreferrer" style={{ color: "green" }}>Spotify's Web API</a>.</p>
-                    <p >Built by Lukar. <a href="https://github.com/lukarh/spotinsights" rel="noreferrer" style={{ color: "green" }}>An Open Source </a>React.js & Node.js Application.</p> 
+                    <p >Built by Lukar. <a href="https://github.com/lukarh/spotiinsights" rel="noreferrer" style={{ color: "green" }}>An Open Source </a>React.js & Node.js Application.</p> 
                     <p>This web application is not affiliated with or promoted by Spotify.</p>
                     {/* style={{ color: "#9EE6CF" }} */}
                 </div>
