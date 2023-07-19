@@ -1,4 +1,4 @@
-# spotinsights
+# spotiinsights
 
 ## About
 A live web-application deployed on Heroku that interacts with Spotify's Web API to allow users to gain insights to their Spotify usage.
