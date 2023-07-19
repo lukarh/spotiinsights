@@ -22,9 +22,9 @@ This app runs on Node.js and you can find instructions on how to install Node.js
 
 After installing Node.js, clone the repository and install the dependencies of the client and server:
 
-`$ cd client` then `npm install`
+`$ cd client` then `$ npm install` then `$ npm start` to run the client
 
-`$ cd server` then `npm install`
+`$ cd server` then `$ npm install` then `$ nodemon` to run the server
 
 ### Application Credentials
 
