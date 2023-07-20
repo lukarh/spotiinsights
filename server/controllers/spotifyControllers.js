@@ -43,8 +43,6 @@ const getRecentlyPlayed = async (req, res) => {
         }
         trackIds = trackIds.slice(0,-1)
 
-        console.log(response.data)
-
         // get tracks features
         const featuresResponse = await getTracksFeatures(trackIds, accessToken)
 
@@ -95,7 +93,18 @@ const getUserTopTracks = async (req, res) => {
             }
         )
 
-        return res.status(200).send({ tracksData: tracksResponse.data })
+        // get the tracks and loop through the tracks and made ID query
+        const tracks = tracksResponse.data.items
+        let trackIds = ''
+        for (const trackItem of tracks) {
+            trackIds += (trackItem.id + ',')
+        }
+        trackIds = trackIds.slice(0,-1)
+
+        // get tracks features
+        const featuresResponse = await getTracksFeatures(trackIds, accessToken)
+
+        return res.status(200).send({ tracksData: tracksResponse.data, trackFeaturesData: featuresResponse.data })
     } catch (error) {
         console.log('Top Tracks Error:', error.response.data)
         return res.status(500).send({ message: "There was error getting Spotify API data." })
