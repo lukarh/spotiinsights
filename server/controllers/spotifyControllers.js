@@ -15,6 +15,7 @@ const getTracksFeatures = async (trackIds, accessToken) => {
         )
         return response
     } catch (error) {
+        console.log('Track Features Error:', error.response.data)
         return res.status(500).send({ message: "There was an error getting Tracks Features from Spotify API for Recently Played." })
     }
 }
@@ -24,6 +25,7 @@ const getRecentlyPlayed = async (req, res) => {
     console.log('Recently Played Token', accessToken)
 
     try {
+        console.log('calling recently played:')
         const response = await axios.get(
             `https://api.spotify.com/v1/me/player/recently-played?limit=50`,
             {
@@ -41,12 +43,15 @@ const getRecentlyPlayed = async (req, res) => {
         }
         trackIds = trackIds.slice(0,-1)
 
+        console.log(response.data)
+
         // get tracks features
         const featuresResponse = await getTracksFeatures(trackIds, accessToken)
 
         return res.status(200).send({ recentPlaylistData: response.data, trackFeaturesData: featuresResponse.data })
     
     } catch (error) {
+        console.log('Recently Played Error:', error.response.data)
         return res.status(500).send({ message: "There was an error geting Spotify API data." })
     }
 }
@@ -69,6 +74,7 @@ const getUserTopArtists = async (req, res) => {
 
         return res.status(200).send({ artistsData: artistsResponse.data })
     } catch (error) {
+        console.log('Top Artists Error:', error.response.data)
         return res.status(500).send({ message: "There was error getting Spotify API data." })
     }
 }
@@ -91,6 +97,7 @@ const getUserTopTracks = async (req, res) => {
 
         return res.status(200).send({ tracksData: tracksResponse.data })
     } catch (error) {
+        console.log('Top Tracks Error:', error.response.data)
         return res.status(500).send({ message: "There was error getting Spotify API data." })
     }
 }

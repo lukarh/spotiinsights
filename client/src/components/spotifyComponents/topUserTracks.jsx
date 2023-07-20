@@ -17,7 +17,7 @@ const TopUserTracks = ({ timeRange, setTimeRange }) => {
 
                 setTopTracksData(tracksData.items)
             } catch (error) {
-                window.location.href = '/home'
+                // window.location.href = '/home'
             }
         }
 

@@ -33,7 +33,7 @@ const TopUserItems = ({ timeRange, setTimeRange }) => {
             calculateTopGenres(artistsData.items)
 
         } catch (error) {
-            window.location.href = '/home'
+            // window.location.href = '/home'
         }
     }
 
@@ -131,7 +131,7 @@ const TopUserItems = ({ timeRange, setTimeRange }) => {
                 calculateTopGenres(artistsData.items)
 
             } catch (error) {
-                window.location.href ='/home'
+                // window.location.href ='/home'
             }
         }
 

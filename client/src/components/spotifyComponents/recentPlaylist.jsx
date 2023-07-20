@@ -111,7 +111,7 @@ const RecentPlaylist = () => {
 
                 setRecentPlaylist(recentPlaylistData.items)
             } catch (error) {
-                window.location.href = '/home'
+                // window.location.href = '/home'
             }
         }
 
@@ -134,17 +134,25 @@ const RecentPlaylist = () => {
     
     const MusicItem = (item, index) => {
         return (
-            <div className="row" style={{ display: "flex", flexDirection: "row", alignItems: "center", paddingBottom: "0.25rem" }} key={item.played_at}>
-                <div style={{ width: "2%", paddingLeft: "1.5rem", paddingRight: "2.5rem" }}>
+            <div className="row" style={{ display: "flex", flexDirection: "row", alignItems: "center", paddingTop: "0.25rem", paddingBottom: "0.25rem" }} key={item.played_at}>
+
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "5%", paddingLeft: "1.75rem", paddingRight: "1.75rem" }}>
                     {index+1}
                 </div>
-                <div>
-                    <img src={item.track.album.images[2].url} style={{ borderRadius: "5px", marginRight: "10px", width: "48px", height: "48px" }} />
+
+                <div style={{ display: "flex", flexDirection: "row", width: "77.5%" }}>
+
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                        <img src={item.track.album.images[2].url} style={{ borderRadius: "5px", width: "50px", height: "50px" }} />
+                    </div>
+
+                    <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: "0.5rem", paddingRight: "0.5rem" }}>
+                        <h5 style={{ fontSize: "14px" }}>{item.track.name}</h5>
+                        <p style={{ fontSize: "12px" }}>{item.track.artists.map(artist => artist.name).join(', ')}</p>
+                    </div>
+
                 </div>
-                <div style={{ width: "450px" }}>
-                    <h5 style={{ fontSize: "14px" }}>{item.track.name}</h5>
-                    <p style={{ fontSize: "12px" }}>{item.track.artists.map(artist => artist.name).join(', ')}</p>
-                </div>
+
                 <div>
                     <p style={{ fontSize: "12px" }}>{formatDate(item.played_at)}</p>
                     <p style={{ fontSize: "12px" }}>{formatTimeWithoutSeconds(item.played_at)}</p>
@@ -157,9 +165,9 @@ const RecentPlaylist = () => {
 
         return (
             <div style={{ borderRadius: "15px", backgroundColor: "#121212" }}>
-                <h1 style={{ paddingTop: "1rem", paddingLeft: "2rem" }}>What You've Been Recently Listening</h1>
+                <h1 style={{ paddingTop: "1rem", paddingLeft: "2rem" }}>Recent Played</h1>
                 <Divider style={{ backgroundColor: "white", marginLeft: "1rem", marginRight: "1rem", marginBottom: "1rem" }} />
-                <div style={{ maxHeight: "61vh", overflowY: "auto" }}>
+                <div style={{ maxHeight: "50vh", overflowY: "auto" }}>
                     {
                         recentPlaylist.map((item, index) => MusicItem(item, index))
                     }

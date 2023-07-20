@@ -18,11 +18,7 @@ function generateCodeVerifier(length) {
 const loginSpotify = async (req, res) => {
     const spotify_client_id = process.env.SPOTIFY_CLIENT_ID
 
-    var scope = "streaming \
-    user-read-email \
-    user-read-private  \
-    user-top-read \
-    user-read-recently-played" 
+    var scope = "user-read-email user-read-private user-top-read user-read-recently-played" 
 
     var state = generateCodeVerifier(16)
 
@@ -31,7 +27,7 @@ const loginSpotify = async (req, res) => {
         client_id: spotify_client_id,
         scope: scope,
         redirect_uri: "http://localhost:3000/redirect",
-        // redirect_uri: "https://spotiinsights-7ca95654505a.herokuapp.com/redirect",
+        // redirect_uri: "https://vibeify-1cdb0dbbe555.herokuapp.com/redirect",
         state: state
     })
     return res.status(200).send({ redirectURL: 'https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString() })
@@ -60,7 +56,7 @@ const getAccessToken = async (req, res) => {
             data: new URLSearchParams({
               code: code,
               redirect_uri: "http://localhost:3000/redirect", 
-            //   redirect_uri: "https://spotiinsights-7ca95654505a.herokuapp.com/redirect",
+            //   redirect_uri: "https://vibeify-1cdb0dbbe555.herokuapp.com/redirect",
               grant_type: 'authorization_code'
             }),
             headers: {
@@ -78,6 +74,7 @@ const getAccessToken = async (req, res) => {
 
             req.session.access_token = access_token
             req.session.refresh_token = refresh_token
+            console.log("user's tokens", access_token, refresh_token)
             return res.status(200).send({ message: "Successfully logged in via OAuth." })
         }
 

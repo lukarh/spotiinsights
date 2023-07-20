@@ -19,7 +19,7 @@ app.use(cors({
 
 // app.use(function(req, res, next) {
 //     res.header("Access-Control-Allow-Credentials", true);
-//     res.header("Access-Control-Allow-Origin", "https://spotiinsights-7ca95654505a.herokuapp.com/");
+//     res.header("Access-Control-Allow-Origin", "https://vibeify-1cdb0dbbe555.herokuapp.com/");
 //     res.header("Access-Control-Allow-Headers",
 //     "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-HTTP-Method-Override, Set-Cookie, Cookie");
 //     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");

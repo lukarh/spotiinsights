@@ -57,8 +57,3 @@
   border-radius: 20px;
   box-shadow: 0px 10px 20px 10px rgba(255,255,255,0.3);
 }
-
-@font-face {
-  font-family: 'CircularSpotifyText';
-  src: url('../public/fonts/CircularSpotifyTxT-Light.ttf') format('truetype');
-}

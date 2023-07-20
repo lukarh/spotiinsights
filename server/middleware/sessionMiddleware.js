@@ -10,7 +10,7 @@ const configureSession = (app) => {
     const ttl = 2 * 24 * 60 * 60 * 1000
 
     app.use(session({
-        name: 'Spotiinsights-User',
+        name: 'Vibeify-User',
         secret: process.env.SERVER_SECRET_KEY,
         resave: false,
         saveUninitialized: false,
