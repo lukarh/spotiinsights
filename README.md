@@ -1,4 +1,4 @@
-# spotiinsights
+# vibeify
 
 ## About
 A live web-application deployed on Heroku that interacts with Spotify's Web API to allow users to gain insights to their Spotify usage. A fun hobby project I wanted to do to gain more experience in coding and wanted a way to let spotify users see some interesting insights about their spotify usage. 
