@@ -27,8 +27,8 @@ const TopUserSongs = () => {
 
         const fetchUserSpotifyData = async () => {
             try {
-                // const response = await axios.get(`/api/spotify/top-tracks?timeRange=${timeRange}`, { withCredentials: true })
-                const response = await axios.get(`http://localhost:5000/api/spotify/top-tracks?timeRange=${timeRange}`, { withCredentials: true })
+                const response = await axios.get(`/api/spotify/top-tracks?timeRange=${timeRange}`, { withCredentials: true })
+                // const response = await axios.get(`http://localhost:5000/api/spotify/top-tracks?timeRange=${timeRange}`, { withCredentials: true })
                 const { items } = response.data
 
                 getSpectrumData(items)

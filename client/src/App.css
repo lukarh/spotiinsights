@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+.App {
+  font-family: DM Sans;
+  color: white;
+}
+
 .app {
   position: relative;
   min-height: 100vh;
@@ -109,6 +114,12 @@
 .recent-container {
   padding-left: 1rem;
   padding-right: 1rem;
+  width: 50%;
+}
+
+.music-container {
+  padding: 0.5rem;
+  width: 10%;
 }
 
 /* ARTISTS CSS */
@@ -213,9 +224,37 @@
   color: white;
 }
 
+.flashon-icon {
+  color: orange;
+}
+
 .grey-icon {
   opacity: 1.0;
   color: grey;
+}
+
+.mood-icon {
+  color: cyan;
+}
+
+.nightlife-icon {
+  color: #4E119A;
+}
+
+.piano-icon {
+  color: #002b5c;
+}
+
+.record-icon {
+  color: tan;
+}
+
+.star-icon {
+  color: gold;
+}
+
+.volume-icon {
+  color: #1ED760;
 }
 
 .auth-btn {

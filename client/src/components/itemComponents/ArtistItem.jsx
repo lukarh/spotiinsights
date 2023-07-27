@@ -6,7 +6,7 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 const ArtistItem = ({ item, index }) => {
     return (
-        <Stack className='artist-row' direction="row" justifyContent="center" alignItems="center">
+        <Stack className='artist-row' direction="row" justifyContent="center" alignItems="center" key={index}>
 
             {/* ARTIST INDEX */}
             <div className="flex-center num-container">

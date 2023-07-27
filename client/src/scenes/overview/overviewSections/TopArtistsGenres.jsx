@@ -25,8 +25,8 @@ const TopArtistGenres = () => {
     useEffect(() => {
         const fetchUserSpotifyData = async () => {
             try {
-                // const response = await axios.get(`/api/spotify/top-artists?timeRange=medium_term`, { withCredentials: true })
-                const response = await axios.get(`http://localhost:5000/api/spotify/top-artists?timeRange=medium_term`, { withCredentials: true })
+                const response = await axios.get(`/api/spotify/top-artists?timeRange=medium_term`, { withCredentials: true })
+                // const response = await axios.get(`http://localhost:5000/api/spotify/top-artists?timeRange=medium_term`, { withCredentials: true })
                 const { items } = response.data
 
                 setTopArtistsData(items)
@@ -46,8 +46,8 @@ const TopArtistGenres = () => {
         timeContext.changeTimeRange(newTimeRange)
 
         try {
-            // const response = await axios.get(`/api/spotify/top-artists?timeRange=${newTimeRange}`, { withCredentials: true })
-            const response = await axios.get(`http://localhost:5000/api/spotify/top-artists?timeRange=${newTimeRange}`, { withCredentials: true })
+            const response = await axios.get(`/api/spotify/top-artists?timeRange=${newTimeRange}`, { withCredentials: true })
+            // const response = await axios.get(`http://localhost:5000/api/spotify/top-artists?timeRange=${newTimeRange}`, { withCredentials: true })
             const { items } = response.data
 
             setTopArtistsData(items)

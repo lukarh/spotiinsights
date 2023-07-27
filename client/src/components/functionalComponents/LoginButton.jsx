@@ -15,8 +15,8 @@ const LoginButton = () => {
 
 		try {
             // const baseURL = window.location.origin
-            // const response = await axios.get(`/auth/login`, { withCredentials: true })
-			const response = await axios.get('http://localhost:5000/auth/login', { withCredentials: true })
+            const response = await axios.get(`/auth/login`, { withCredentials: true })
+			// const response = await axios.get('http://localhost:5000/auth/login', { withCredentials: true })
 
             if (response.status === 200) {
                 const { redirectURL } = response.data

@@ -4,7 +4,7 @@ const MusicItem = ({ item, index }) => {
     const removeParanthesesRegex = /\([^()]*\)/g
 
     return (
-        <Stack alignItems="center" style={{ padding: "0.5rem", width: "10%", }} key={index+1}>
+        <Stack alignItems="center" className="music-container" key={index+1}>
 
             {/* TRACK IMAGE & HYPERLINK*/}
             <div>

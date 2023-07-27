@@ -12,7 +12,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 function App() {
 
   	return (
-		<div className="App" style={{ fontFamily: 'DM Sans', color: 'white' }}>
+		<div className="App">
 			<div className="container">
 
 				<BrowserRouter>

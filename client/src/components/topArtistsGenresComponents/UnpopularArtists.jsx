@@ -35,7 +35,7 @@ const UnpopularArtists = ({ sortedArtistsData }) => {
 
             {/* UNPOPULAR ARTISTS ITEMS */}
             {
-                unpopularArtists.map((item, index) => <ArtistItem item={item} index={index} key={index} />)
+                unpopularArtists.map((item, index) => <ArtistItem item={item} index={index} />)
             }
 
             {/* UNPOPULAR ARTISTS RATING DESC*/}

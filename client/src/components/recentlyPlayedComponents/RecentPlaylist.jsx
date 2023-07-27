@@ -23,7 +23,7 @@ const RecentPlaylist = ({ recentPlaylist }) => {
     }
     
     return (
-        <Stack className="recent-container" style={{ width: "50%" }}>
+        <Stack className="recent-container">
             
             {/* RECENT PLAYLIST TITLE */}
             <h1 className="title-text-divider">

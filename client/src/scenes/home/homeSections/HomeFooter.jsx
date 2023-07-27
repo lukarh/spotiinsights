@@ -16,7 +16,7 @@ const HomeFooter = () => {
             {/* FOOTER DESCRIPTION LAYOUT */}
             <p className="text-align-center">
                 {FOOTER_MESSAGE_ONE} 
-                <a href={SPOTIFY_LINK} rel="noreferrer" style={{ color: "black" }}>
+                <a href={SPOTIFY_LINK} rel="noreferrer">
                     {FOOTER_MESSAGE_TWO} 
                 </a>
             </p>
@@ -27,7 +27,7 @@ const HomeFooter = () => {
 
             <p className="text-align-center">
                 {FOOTER_MESSAGE_FOUR}
-                <a href={GITHUB_LINK} rel="noreferrer" style={{ color: "black" }}>
+                <a href={GITHUB_LINK} rel="noreferrer">
                     {FOOTER_MESSAGE_FIVE}
                 </a> 
                 {FOOTER_MESSAGE_SIX}

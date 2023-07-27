@@ -4,7 +4,7 @@ import Rating from '@mui/material/Rating';
 const RatingItem = ({ rating, description, GreyIcon, Icon, index }) => {
 
     return (
-        <Stack direction="row" alignItems="center" justifyContent="flex-end" spacing={0.25}>
+        <Stack direction="row" alignItems="center" justifyContent="flex-end" spacing={0.25} key={index}>
 
             {/* RATING DESCRIPTION */}
             <h3>

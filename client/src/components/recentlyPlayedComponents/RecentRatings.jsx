@@ -30,19 +30,19 @@ const RecentRatings = ({ recentPlaylist }) => {
 
     const ratingIconMap = [
         ["acousticness", acousticnessRating, setAcousticnessRating, "Acousticness Rating:", 
-        <VolumeDownIcon style={{ opacity: 1.0, color: "grey" }} />, <VolumeDownIcon style={{ color: '#1ED760' }}/>],
+        <VolumeDownIcon className="grey-icon" />, <VolumeDownIcon className="volume-icon" />],
         ["danceability", danceabilityRating, setDanceabilityRating, "Danceability Rating:", 
-        <NightlifeIcon style={{ opacity: 1.0, color: "grey" }} />, <NightlifeIcon style={{ color: '#4E119A' }}/>],
+        <NightlifeIcon className="grey-icon" />, <NightlifeIcon className="nightlife-icon" />],
         ["energy", energyRating, setEnergyRating, "Energy Rating:", 
-        <FlashOnIcon style={{ opacity: 1.0, color: "grey" }} />, <FlashOnIcon style={{ color: 'orange' }} />],
+        <FlashOnIcon className="grey-icon" />, <FlashOnIcon className="flashon-icon" />],
         ["happiness", happinessRating, setHappinessRating, "Happiness Rating:", 
-        <MoodIcon style={{ opacity: 1.0, color: "grey" }} />, <MoodIcon style={{ color: 'cyan' }} />],
+        <MoodIcon className="grey-icon" />, <MoodIcon className="mood-icon" />],
         ["instrumentalness", instrumentalnessRating, setInstrumentalnessRating, "Instrumentalness Rating:", 
-        <PianoIcon style={{ opacity: 1.0, color: "grey" }} />, <PianoIcon style={{ color: '#002b5c' }} />],
+        <PianoIcon className="grey-icon" />, <PianoIcon className="piano-icon" />],
         ["popularity", popularityRating, setPopularityRating, "Popularity Rating:", 
-        <StarIcon style={{ opacity: 1.0, color: "grey" }} />, <StarIcon style={{ color: 'gold' }} />],
+        <StarIcon className="grey-icon" />, <StarIcon className="star-icon" />],
         ["speechiness", speechinessRating, setSpeechinessRating, "Speechiness Rating:", 
-        <RecordVoiceOverIcon style={{ opacity: 1.0, color: "grey" }} />, <RecordVoiceOverIcon style={{ color: 'tan' }} />]
+        <RecordVoiceOverIcon className="grey-icon" />, <RecordVoiceOverIcon className="record-icon" />]
     ]
 
     const HEADER_LABEL = "Rating your last 50 played songs. 🎼"
@@ -52,7 +52,7 @@ const RecentRatings = ({ recentPlaylist }) => {
     const RATING_DESC_THREE = "The ratings above are an average of your 50 most recently played songs and converted on a scale of 10."
 
     return (
-        <Stack className="recent-container" justifyContent="center" style={{ width: "50%" }}>
+        <Stack className="recent-container" justifyContent="center">
 
             {/* RECENT RATINGS HEADER */}
             <h1 className="title-divider-right">
@@ -66,7 +66,7 @@ const RecentRatings = ({ recentPlaylist }) => {
                 {/* RECENT RATINGS ICONS AND RATES */}
                 {
                     ratingIconMap.map((ratingObj, index) => 
-                    <RatingItem rating={ratingObj[1]} description={ratingObj[3]} GreyIcon={ratingObj[4]} Icon={ratingObj[5]} index={index} key={index} />)
+                    <RatingItem rating={ratingObj[1]} description={ratingObj[3]} GreyIcon={ratingObj[4]} Icon={ratingObj[5]} index={index} />)
                 }
 
                 {/* AVERAGE BPM / TEMPO */}

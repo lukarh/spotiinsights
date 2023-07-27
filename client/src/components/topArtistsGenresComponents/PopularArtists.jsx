@@ -36,7 +36,7 @@ const PopularArtists = ({ topArtistsData }) => {
 
             {/* TOP ARTISTS ITEMS */}
             {
-                popularArtists.map((item, index) => <ArtistItem item={item} index={index} key={index} />)
+                popularArtists.map((item, index) => <ArtistItem item={item} index={index} />)
             }
 
             {/* TOP ARTISTS RATING DESC */}
