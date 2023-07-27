@@ -1,7 +1,9 @@
 import './App.css';
+import './styles/Home.css';
+import './styles/Overview.css';
 
 import Home from './scenes/home';
-import Callback from './scenes/callback';
+import Redirect from './scenes/redirect';
 import NotFound from './scenes/notFound';
 import Overview from './scenes/overview';
 
@@ -17,8 +19,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Navigate to="/home" />} />
 						<Route exact path="/home" element={<Home />} />
-						{/* <Route exact path="/spotify-overview" element={<Spotify />} /> */}
-						<Route exact path='/redirect' element={<Callback/>} />
+						<Route exact path='/redirect' element={<Redirect/>} />
 						<Route exact path="*" element={<NotFound />} />
 						<Route exact path='/overview' element={<Overview />} />
 					</Routes>

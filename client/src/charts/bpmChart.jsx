@@ -3,12 +3,12 @@ import { ResponsiveBar } from '@nivo/bar'
 const BPMChart = ({ data }) => {
 
     return (
-        <div style={{ height: "500px", position: "relative", width: "100%", display: "block", zIndex: "3", paddingTop: "1rem", paddingBottom: "1rem" }}>
+        <div className="chart-wrapper">
+
             <ResponsiveBar 
                     data={data}
                     keys={[
                         'BPM',
-                        // 'time',
                     ]}
                     borderRadius={5}
                     indexBy="dateTime"
@@ -18,10 +18,7 @@ const BPMChart = ({ data }) => {
                     enableGridY={false}
                     tooltip={d => {
                         return (
-                            <div style={{ 
-                                display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center",
-                                backgroundColor: "black", color: "white", padding: "6px"
-                            }}>
+                            <div className="bar-tooltip">
                                 <p>{d.data.track}</p>
                                 <p>BPM: {d.data.BPM}</p>
                                 <p>{d.data.date} - {d.data.time}</p>
@@ -29,6 +26,7 @@ const BPMChart = ({ data }) => {
                         )
                     }}
                 />
+
         </div>
     )
 }

@@ -16,78 +16,240 @@
   width: 100%;
 }
 
-/* HOME PAGE */
-
-.background {
-  /* background-image: linear-gradient(#EF4700 20%, #FF9919 90%); */
-  background-image: linear-gradient(#000000 20%, #1E2C43 40%, #5A5ED3 65%, #E1A589 99%);
-  height: 100%; 
-  width: 100%;
-  position: absolute; 
-  top: 0; 
-  left: 0;
+.centered-column-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }
 
-.palm-tree-image {
-  background-image: url('http://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Silhouettes-PNG/Palm_Trees_Silhouette_PNG_Clip_Art_Image.png?m=1463584089');
-  background-repeat: no-repeat;
-  background-size: 500px;
-	width: 500px;
-  height: 500px;
-	position: absolute;
-	bottom: 0;
-	left: -120px;
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.birds-image {
-  background-image: url('https://www.pngmart.com/files/3/Birds-PNG-Pic.png');
-  background-repeat: no-repeat;
-  width: 1000px;
-  height: 500px;
-  position: absolute;
-  top: 100px;
-  right: 0;
-}
-
-/* OVERVIEW PAGE */
-
-.background-alt {
-  /* background-image: linear-gradient(#EF4700 20%, #FF9919 90%); 5A5ED3*/
-  background-image: linear-gradient(#000000 20%, #1E2C43 40%, #5A5ED3 65%, #E1A589 90%);
-  /* height: 250%;  */
-  min-height: 100vh;
-  width: 100%;
-  position: absolute; 
-  top: 0; 
-  left: 0;
-  z-index: 3;
-}
-
-.top-container {
-  /* margin-top:10em; */
-  margin-left: auto;
-  margin-right: auto;
+.text-align-center {
   text-align: center;
-
-  /* Make sure text is infront of background images */
-  display: block;
-  position: relative;
-  z-index: 3;
 }
 
-.time-btn {
-  background-color: "black"; 
-  color: "white";
-  font-size: "40px"; 
-  font-family: "DM Sans"; 
-  width: "250px"; 
-  height: "250px"; 
-  border-radius: "50%";
+.text-align-right {
+  text-align: right;
 }
 
-.gradient-divider {
-  background: linear-gradient(to right, red, blue);
+.text-title {
+  font-size: 60px;
+}
+
+.auto-top-margin-padding {
+  margin-top: auto; 
+  padding: 1rem;
+}
+
+.title-padding {
+  padding-bottom: 0.5rem;
+}
+
+.title-text-divider {
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+}
+
+.title-divider-right {
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  margin-left: auto;
+}
+
+/* ALBUM & ARTIST IMAGES CSS */
+
+.album {
+  border-radius: 5px; 
+  width: 64px;
+  height: 64px;
+}
+
+.artist {
+  border-radius: 50%; 
+  margin-right: 1rem;
+  width: 64px; 
+  height: 64px;
+}
+
+.spotify-hyperlink {
+  display: flex;
+  justify-content: center;
+}
+
+.album-alt {
+  border-radius: 5px; 
+  width: 100px;
+  height: 100px;
+  margin: 0.5rem;
+}
+
+/* RECENTLY PLAYED CSS */
+
+.music-row {
+  padding: 0.5rem;
+}
+
+.num-container {
+  width: 7.5%
+}
+
+.track-details-container {
+  width: 80%;
+}
+
+.track-played-container {
+  width: 12.5%;
+}
+
+.recent-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ARTISTS CSS */
+
+.artist-row {
+  padding: 0.5rem;
+}
+
+.artist-details-container {
+  width: 45%;
+}
+
+.artist-rating-container {
+  width: 27.5%;
+}
+
+/* GENRE SECTION */
+
+.genre-container {
+    display: flex;
+    align-items: center; 
+    box-shadow: 0px 4px 4px 4px rgb(0,0,0,0.35);
+    width: 400px; 
+    height: 75px; 
+    background-color: #5358C3; 
+    border-radius: 10px;
+    margin: 1rem;
+    padding-left: 1rem;
+}
+
+/* CHARTS */
+
+.chart-wrapper {
+  height: 500px;
+  width: 100%; 
+  padding: 1rem;
+}
+
+/* RATING */
+
+.rating-text-container {
+  width: 60px;
+}
+
+.rating-container {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* DESCRIPTION TEXTS */
+
+.small-desc-white {
+    font-size: 12px; 
+    color: white;
+    text-align: center;
+}
+
+.small-desc-lightgrey {
+  font-size: 12px; 
+  color: lightgrey;
+  text-align: center;
+}
+
+.small-desc-grey {
+  font-size: 12px; 
+  color: grey;
+  text-align: right;
+}
+
+.red-text {
+  color: #ed174c;
+}
+
+/* PADDINGS */
+
+.padding-1-rem {
+  padding: 1rem;
+}
+
+.padding-1-rem-sides {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.padding-2-rem {
+  padding: 2rem;
+}
+
+/* MUI COMPONENTS */
+
+.default-divider {
+  background-color: white; 
   height: 5px;
+  margin-left: 1rem !important; 
+  margin-right: 1rem !important;
+  margin-bottom: 1rem !important; 
+}
+
+.exit-icon {
+  opacity: 1.0;
+  color: white;
+}
+
+.grey-icon {
+  opacity: 1.0;
+  color: grey;
+}
+
+.auth-btn {
+  background-color: black !important;
+  font-family: DM Sans !important; 
+  font-weight: bold !important; 
+  border-radius: 20px !important; 
+  height: 50px !important; 
+  width: 200px !important;  
+}
+
+.bar-tooltip {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  background-color: black; 
+  color: white;
+  padding: 6px;
+}
+
+.line-tooltip {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  background: black; 
+  padding: 10px; 
+  border-radius: 5px;
+}
+
+.spinner-dimensions {
+  width: 100px !important;
+  height: 100px !important;
 }
 
 /* ANIMATION */
@@ -115,7 +277,7 @@
 
 .stars {
   background: url(stars.png) repeat top center;
-  z-index: 0;
+  z-index: -2;
 } 
 
 .twinkling {
@@ -127,13 +289,13 @@
   display: block;
   height: 20%;
   background: transparent url(twinkling.png) repeat top center;
-  z-index: 1;
+  z-index: -1;
   animation: move-twinkle-back 200s linear infinite;
 }
 
 .clouds {
   background: transparent url(clouds.png) repeat top center;
-  z-index: 2;
+  z-index: 0;
   opacity: .4;
   animation: move-clouds-back 200s linear infinite;
 }
@@ -165,17 +327,4 @@
 ::-webkit-scrollbar-track-piece {
   background-color: #121212; 
   border-radius: 15px;
-}
-
-/* LOGIN PAGE CSS */
-
-.login-container {
-  display: flex; 
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
-  /* height: 50%; */
-  border-radius: 20px;
-  box-shadow: 0px 10px 20px 10px rgba(255,255,255,0.3);
 }

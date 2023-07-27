@@ -1,9 +1,7 @@
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') }) // load all the environment variables
 
-const axios = require('axios')
-
-// const request = require('request');
+const spotifyServices = require('../services/spotifyServices')
 
 function generateCodeVerifier(length) {
     let text = '';
@@ -16,12 +14,20 @@ function generateCodeVerifier(length) {
 }
 
 const loginSpotify = async (req, res) => {
+    // get client id from environment variables
     const spotify_client_id = process.env.SPOTIFY_CLIENT_ID
 
-    var scope = "user-read-email user-read-private user-top-read user-read-recently-played" 
+    // define scope of api call access
+    var scope = "streaming \
+    user-read-email \
+    user-read-private  \
+    user-top-read \
+    user-read-recently-played" 
 
+    // generate random state
     var state = generateCodeVerifier(16)
 
+    // set up parameters for user to login with Spotify to access the website
     var auth_query_parameters = new URLSearchParams({
         response_type: "code",
         client_id: spotify_client_id,
@@ -30,10 +36,13 @@ const loginSpotify = async (req, res) => {
         // redirect_uri: "https://vibeify-1cdb0dbbe555.herokuapp.com/redirect",
         state: state
     })
+
+    // return redirectURL
     return res.status(200).send({ redirectURL: 'https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString() })
 }
 
 const logoutSpotify = async (req, res) => {
+    // destroy the user's session
     req.session.destroy((error) => {
         if (error) {
             res.status(500).json({ error: 'Server error' })
@@ -43,77 +52,45 @@ const logoutSpotify = async (req, res) => {
     })
 }
 
-const getAccessToken = async (req, res) => {
-    const spotify_client_id = process.env.SPOTIFY_CLIENT_ID
-    const spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET
-
+const requestAccessToken = async (req, res) => {
+    // get code from query params
     const code = req.query.code
 
     try {
+        // make a request to Spotify API
+        const { access_token, refresh_token } = await spotifyServices.fetchAccessToken(code)
 
-        const authOptions = {
-            url: 'https://accounts.spotify.com/api/token',
-            data: new URLSearchParams({
-              code: code,
-              redirect_uri: "http://localhost:3000/redirect", 
-            //   redirect_uri: "https://vibeify-1cdb0dbbe555.herokuapp.com/redirect",
-              grant_type: 'authorization_code'
-            }),
-            headers: {
-              'Authorization': 'Basic ' + (Buffer.from(spotify_client_id + ':' + spotify_client_secret).toString('base64')),
-              'Content-Type': 'application/x-www-form-urlencoded'
-            }
-          };
+        // set access token and refresh token of the session
+        req.session.access_token = access_token
+        req.session.refresh_token = refresh_token
 
-        const response = await axios.post(authOptions.url, authOptions.data, {
-            headers: authOptions.headers
-        })
+        // let client know access token request was successful
+        return res.status(200).send({ message: "Successfully logged in via OAuth." })
 
-        if (response.status === 200) {
-            const { access_token, refresh_token } = response.data
-
-            req.session.access_token = access_token
-            req.session.refresh_token = refresh_token
-            console.log("user's tokens", access_token, refresh_token)
-            return res.status(200).send({ message: "Successfully logged in via OAuth." })
-        }
-
-        return res.status(500).send({ message: "There was an error getting the Access Token" })
     } catch (error) {
+        // otherwise an error occurred
         return res.status(500).send({ message: "There was an error getting the Access Token" })
     }
 }
 
-const getRefreshToken = async (req, res) => {
-    const spotify_client_id = process.env.SPOTIFY_CLIENT_ID
-    const spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET
+const getAccessToken = async (req, res) => {
+    const code = req.query.code
 
-    var refresh_token = req.query.refresh_token
+    try {
+        const { access_token, refresh_token } = await spotifyServices.fetchAccessToken(code)
 
-    var authOptions = {
-        url: 'https://accounts.spotify.com/api/token',
-        headers: { 'Authorization': 'Basic ' + (new Buffer.from(spotify_client_id + ':' + spotify_client_secret).toString('base64')) },
-            form: {
-            grant_type: 'refresh_token',
-            refresh_token: refresh_token
-        },
-        json: true
-    };
+        req.session.access_token = access_token
+        req.session.refresh_token = refresh_token
 
-    request.post(authOptions, function(error, response, body) {
-        if (!error && response.statusCode === 200) {
-            var access_token = body.access_token;
-            var request_token = body.request_token
-            return res.status(200).send({ 'access_token': access_token, refresh_token: request_token })
-        } else {
-            return res.status(500).send({ message: "There was an error getting the Refresh Token."})
-        }
-    })
+        return res.status(200).send({ message: "Successfully logged in via OAuth." })
+
+    } catch (error) {
+        return res.status(500).send({ message: "There was an error getting the Access Token" })
+    }
 }
 
 module.exports = {
     loginSpotify,
     logoutSpotify,
     getAccessToken,
-    getRefreshToken,
 }

@@ -11,7 +11,4 @@ router.get('/logout', AuthControllers.logoutSpotify)
 // Route for getting AccessToken
 router.get('/callback', AuthControllers.getAccessToken)
 
-// Route for getting RefreshToken
-router.get('/get-refresh-token', AuthControllers.getRefreshToken)
-
 module.exports = router;

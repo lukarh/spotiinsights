@@ -1,12 +1,13 @@
 import { ResponsiveLine } from '@nivo/line'
 
-const HappinessChart = ({ data, recentPlaylist }) => {
+const HappinessChart = ({ data }) => {
+    const HAPPY_LABEL = 'Happy Land 😄'
+    const SAD_LABEL = 'Sad Land 😢'
 
     const customTooltip = ({ slice }) => {
         const point = slice.points[0]; // In a line chart, each slice contains only one point
         return (
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", 
-                    background: 'black', padding: '10px', borderRadius: '5px' }}>
+          <div className="line-tooltip">
             <p>{`${point.data.song}`}</p>
             <p>{`${point.data.dateTime}`}</p>
             {
@@ -21,18 +22,23 @@ const HappinessChart = ({ data, recentPlaylist }) => {
                 <p>😔</p>
             }
           </div>
-        );
-      };
+        )
+    }
     
-
     return (
-        <div style={{ height: "600px", position: "relative", width: "100%", display: "block", zIndex: "3", paddingBottom: "4rem" }}>
-            Happy Land
+        <div className="chart-wrapper">
+
+            {/* TEXT LABEL */}
+            <p className="text-align-right">
+                {HAPPY_LABEL}
+            </p>
+
+            {/* LINE CHART */}
             <ResponsiveLine
                     data={data}
                     colors="white"
                     xScale={{ type: "linear", min: 0, max: data[0].data.length + 1 }}
-                    yScale={{ type: "linear", min: -.501, max: .501 }}
+                    yScale={{ type: "linear", min: -.515, max: .515 }}
                     curve="monotoneX"
                     enableGridX={false}
                     pointSize={12}
@@ -48,7 +54,12 @@ const HappinessChart = ({ data, recentPlaylist }) => {
                     ]}
                     sliceTooltip={customTooltip}                    
                 />
-            Sad Land
+
+            {/* TEXT LABEL */}
+            <p className="text-align-right">
+                {SAD_LABEL}
+            </p>
+
         </div>
     )
 }

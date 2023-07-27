@@ -1,0 +1,33 @@
+.background {
+    /* background-image: linear-gradient(#EF4700 20%, #FF9919 90%); */
+    background-image: linear-gradient(#000000 20%, #1E2C43 40%, #5A5ED3 65%, #E1A589 99%);
+    height: 100%; 
+    width: 100%;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    z-index: 0;
+}
+  
+.palm-tree-image {
+    background-image: url('http://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Silhouettes-PNG/Palm_Trees_Silhouette_PNG_Clip_Art_Image.png?m=1463584089');
+    background-repeat: no-repeat;
+    background-size: 500px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    bottom: 0;
+    left: -120px;
+    z-index: -1;
+}
+
+.birds-image {
+    background-image: url('https://www.pngmart.com/files/3/Birds-PNG-Pic.png');
+    background-repeat: no-repeat;
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    z-index: -1;
+}
