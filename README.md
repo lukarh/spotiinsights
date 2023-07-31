@@ -11,10 +11,10 @@ A live web-application deployed on Heroku that interacts with Spotify's Web API 
 Version 2.0.0 brings a new and reformed UI experience.
 
 ![image](https://github.com/lukarh/vibeify/assets/65103724/10e3a8d2-0eab-4eb8-93fe-685569fc5b0e)
-![image](https://github.com/lukarh/vibeify/assets/65103724/c86ed7f6-9273-4843-ad04-9711b0c037f6)
-![image](https://github.com/lukarh/vibeify/assets/65103724/8a7a0d90-4d06-4644-9507-70968c1bb417)
-![image](https://github.com/lukarh/vibeify/assets/65103724/c14aadff-1868-4c9b-90d9-016179213de1)
-![image](https://github.com/lukarh/vibeify/assets/65103724/199c1f15-3de0-438b-9260-0cebff80d426)
+![image](https://github.com/lukarh/vibeify/assets/65103724/6ea5917d-ed25-4849-85eb-b7e82f1b72ab)
+![image](https://github.com/lukarh/vibeify/assets/65103724/cb027faf-20d7-4c1d-a628-9820f6851dbb)
+![image](https://github.com/lukarh/vibeify/assets/65103724/da65c0ca-c082-4c00-bddc-8e75434cbbbe)
+![image](https://github.com/lukarh/vibeify/assets/65103724/bda03f9b-ebbf-4288-8055-6643717bd95d)
 
 ## Development
 
