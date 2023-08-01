@@ -139,7 +139,6 @@ const fetchUserTopTracks = async (timeRange, accessToken) => {
 }
 
 const fetchUserProfile = async (accessToken) => {
-    console.log('getting user profile', accessToken)
 
     // make request to Spotify's API for user profile data
     const response = await axios.get(
@@ -156,11 +155,59 @@ const fetchUserProfile = async (accessToken) => {
     return userProfile
 }
 
+const fetchSongRecommendations = async ( 
+        accessToken, limit,
+        seed_artists, seed_genres, seed_tracks, 
+        min_acousticness, max_acousticness,
+        min_danceability, max_danceability,
+        min_energy, max_energy,
+        min_popularity, max_popularity, 
+        min_valence, max_valence
+    ) => {
+
+    console.log(`https://api.spotify.com/v1/recommendations?limit=${limit}&seed_genres=${seed_genres}&min_acousticness=${min_acousticness}&max_acousticness=${max_acousticness}&min_danceability=${min_danceability}&max_danceability=${max_danceability}&min_energy=${min_energy}&max_energy=${max_energy}&min_popularity=${min_popularity}&max_popularity=${max_popularity}&min_valence=${min_valence}&max_valence=${max_valence}`)
+    // make request to Spotify's API for song recommendations
+    const response = await axios.get(
+        // `https://api.spotify.com/v1/recommendations?limit=${limit}&seed_artists=${seed_artists}&seed_genres=${seed_genres}&seed_tracks=${seed_tracks}&min_acousticness=${min_acousticness}&max_acousticness=${max_acousticness}&min_danceability=${min_danceability}&max_danceability=${max_danceability}&min_energy=${min_energy}&max_energy=${max_energy}&min_popularity=${min_popularity}&max_popularity=${max_popularity}&min_valence=${min_valence}&max_valence=${max_valence}`,
+        `https://api.spotify.com/v1/recommendations?limit=${limit}&seed_genres=${seed_genres}&min_acousticness=${min_acousticness}&max_acousticness=${max_acousticness}&min_danceability=${min_danceability}&max_danceability=${max_danceability}&min_energy=${min_energy}&max_energy=${max_energy}&min_popularity=${min_popularity}&max_popularity=${max_popularity}&min_valence=${min_valence}&max_valence=${max_valence}`,
+        {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        }
+    )
+
+    console.log(response.data)
+
+    // return the data
+    const songRecommendations = response.data.tracks
+    return songRecommendations
+}
+
+const fetchSpotifySearchResults = async (accessToken, searchQuery, searchType) => {
+
+    // make request to Spotify's API for search results
+    const response = await axios.get(
+        `https://api.spotify.com/v1/search?q=${searchQuery}&type=${searchType}`,
+        {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        }
+    )
+
+    // return the data
+    const searchResults = response.data[searchType + 's'].items
+    return searchResults
+}
+
 module.exports = {
     fetchAccessToken,
     fetchTracksFeatures,
     fetchRecentlyPlayed,
     fetchUserTopArtists,
     fetchUserTopTracks,
-    fetchUserProfile
+    fetchUserProfile,
+    fetchSongRecommendations,
+    fetchSpotifySearchResults
 }

@@ -7,9 +7,9 @@ import TwinkleStarsAnimation from "../../components/BackgroundComponents/Twinkle
 import { useQuery } from "@tanstack/react-query";
 
 const RecentlyPlayedOverview = () => {
-    const { data, isLoading } = useQuery(["recentlyPlayed"], () => {
-        return axios.get(`/api/spotify/recently-played`, { withCredentials: true }).then((res) => res.data.items)
-        // return axios.get(`http://localhost:5000/api/spotify/recently-played`, { withCredentials: true }).then((res) => res.data.items)
+    const { data, isLoading, isError } = useQuery(["recentlyPlayed"], () => {
+        // return axios.get(`/api/spotify/recently-played`, { withCredentials: true }).then((res) => res.data.items)
+        return axios.get(`http://localhost:5000/api/spotify/recently-played`, { withCredentials: true }).then((res) => res.data.items)
     })
 
     if (isLoading) {
@@ -20,8 +20,12 @@ const RecentlyPlayedOverview = () => {
         </div>)
     }
 
+    if (isError) {
+        window.location.href = '/home'
+    }
+
     return (
-        <div className="flex-background">
+        <Stack className="flex-background">
 
             {/* BACKGROUND ANIMATION */}
             <TwinkleStarsAnimation />
@@ -45,7 +49,7 @@ const RecentlyPlayedOverview = () => {
 
             </Stack>
 
-        </div>
+        </Stack>
     )
 }
 

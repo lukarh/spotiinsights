@@ -1,7 +1,7 @@
 import Pagination from "@mui/material/Pagination";
 
 const MusicPagination = ({ recentPlaylist, itemsPerPage, currentPage, handlePageChange }) => {
-
+    console.log(recentPlaylist)
     return (
         <div className="flex-center padding-1-rem">
             <Pagination 

@@ -7,15 +7,11 @@ const Navbar = () => {
     return ( 
         <Nav>
             <Bars />
-
             <NavMenu>
-
-                <h2>Vibeify</h2>
-
+                <h2>Vibeify</h2> 
                 <Stack direction="row">
-
-                    <NavLink to='/about' >
-                        About
+                    <NavLink to='/welcome' >
+                        Welcome
                     </NavLink>
                     <NavLink to='/recently-played' >
                         Recently Played
@@ -23,11 +19,14 @@ const Navbar = () => {
                     <NavLink to='/top-ten' >
                         Top 10s
                     </NavLink>
-
+                    <NavLink to='/recommendations' >
+                        Recommendations
+                    </NavLink>
+                    <NavLink to='/about' >
+                        About
+                    </NavLink>
                 </Stack>
-
                 <LogoutButton />
-
             </NavMenu>
 
         </Nav>

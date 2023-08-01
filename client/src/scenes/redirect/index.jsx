@@ -19,7 +19,7 @@ const Redirect = () => {
                     const response = await axios.get(`/auth/callback?code=${code}`, { withCredentials: true })
                     // const response = await axios.get(`http://localhost:5000/auth/callback?code=${code}`, { withCredentials: true })
                     if (response.status === 200) {
-                        window.location.href = '/about'
+                        window.location.href = '/welcome'
                     }
                 } catch (error) {
                     window.location.href = '/home'

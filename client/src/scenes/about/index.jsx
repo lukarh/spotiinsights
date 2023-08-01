@@ -1,6 +1,5 @@
-import Stack from "@mui/material/Stack";
+import { Stack } from "@mui/material";
 import Contact from "../../components/AboutComponents/Contact";
-import Welcome from "../../components/AboutComponents/Welcome";
 import AboutInfo from "../../components/AboutComponents/AboutInfo";
 import PrivacyPolicy from "../../components/AboutComponents/PrivacyPolicy";
 import TwinkleStarsAnimation from "../../components/BackgroundComponents/TwinkleStarsAnimation";
@@ -15,9 +14,6 @@ const About = () => {
 
             <div className="flex-center" style={{ flex: 1 }}>
                 <Stack className="padding-1-rem" spacing={1.5} style={{ width: "60%" }}>
-
-                    {/* WELCOME USER SECTION */}
-                    <Welcome />
 
                     {/* ABOUT INFO SECTION */}
                     <AboutInfo />

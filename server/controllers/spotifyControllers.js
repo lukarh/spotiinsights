@@ -71,9 +71,61 @@ const getUserProfile = async (req, res) => {
     }
 }
 
+const getSongRecommendations = async (req, res) => {
+    // get accessToken and params
+    const accessToken = req.session.accessToken
+    const { 
+        limit, seed_artists, seed_genres, seed_tracks, 
+        min_acousticness, max_acousticness,
+        min_danceability, max_danceability,
+        min_energy, max_energy,
+        min_popularity, max_popularity, 
+        min_valence, max_valence
+    } = req.query
+
+    try {
+        // make a request to Spotify API
+        const songRecommendations = await spotifyServices.fetchSongRecommendations(
+            accessToken, limit,
+            seed_artists, seed_genres, seed_tracks, 
+            min_acousticness, max_acousticness,
+            min_danceability, max_danceability,
+            min_energy, max_energy,
+            min_popularity, max_popularity, 
+            min_valence, max_valence
+        )
+
+        // return the data
+        return res.status(200).send({ items: songRecommendations })
+    } catch (error) {
+        return res.status(500).send({ message: "There was an error getting Spotify API data." })
+    }
+}
+
+const getSpotifySearchResults = async (req, res) => {
+    // get accessToken and params
+    const accessToken = req.session.accessToken
+
+    var { searchQuery, searchType } = req.query
+    searchQuery = searchQuery.replace(/\s+/g, '+')
+
+
+    try {
+        // make a request to Spotify API
+        const searchResults = await spotifyServices.fetchSpotifySearchResults(accessToken, searchQuery, searchType)
+
+        // return the data
+        return res.status(200).send({ items: searchResults })
+    } catch (error) {
+        return res.status(500).send({ message: "There was an error getting Spotify API data." })
+    }
+}
+
 module.exports = {
     getUserRecentlyPlayedTracks,
     getUserTopArtists,
     getUserTopTracks,
-    getUserProfile
+    getUserProfile,
+    getSongRecommendations,
+    getSpotifySearchResults
 }

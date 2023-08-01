@@ -2,8 +2,10 @@ import './App.css';
 
 import Home from './scenes/home';
 import About from './scenes/about';
+import Welcome from './scenes/welcome';
 import Redirect from './scenes/redirect';
 import NotFound from './scenes/notFound';
+import Recommendations from './scenes/recommendations';
 
 import Navbar from './scenes/global/Navbar';
 
@@ -16,7 +18,7 @@ import { TimeRangeProvider } from './contexts/TimeRangeContext';
 
 function App() {
 	const client = new QueryClient()
-	const isHomePage = window.location.pathname === '/home';
+	const navbarPaths = ['/about', '/welcome', '/redirect', '/top-ten', '/recently-played', '/recommendations']
 
   	return (
 		<div className="App">
@@ -24,16 +26,16 @@ function App() {
 				<BrowserRouter>
 					<QueryClientProvider client={client}>
 					<TimeRangeProvider>
-					{isHomePage ? null : <Navbar />}
+					{navbarPaths.includes(window.location.pathname) && <Navbar />}
 					<Routes>
 						<Route path="/" element={<Navigate to="/home" />} />
 						<Route exact path="/home" element={<Home />} />
 						<Route exact path="/about" element={<About />} />
+						<Route exact path='/welcome' element={<Welcome />} />
 						<Route exact path='/redirect' element={<Redirect/>} />
-						{/* <Route exact path='/overview' element={<Overview />} /> */}
 						<Route exact path='/top-ten' element={<TopTensOverview />} />
+						<Route exact path='/recommendations' element={<Recommendations />} />
 						<Route exact path='/recently-played' element={<RecentlyPlayedOverview />} />
-
 						<Route exact path="*" element={<NotFound />} />
 					</Routes>
 					</TimeRangeProvider>

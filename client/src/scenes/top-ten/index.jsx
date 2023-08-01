@@ -1,21 +1,21 @@
 import { useContext } from "react";
-import TopArtistGenres from "./sections/TopArtistsGenres";
-import TopUserSongs from "./sections/TopUserSongs";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { TimeRangeContext } from "../../contexts/TimeRangeContext";
+import TopUserSongs from "./sections/TopUserSongs";
 import TimeRadioGroup from "../../components/FunctionalComponents/TimeRadioGroup";
+import TopArtistGenres from "./sections/TopArtistsGenres";
 import TwinkleStarsAnimation from "../../components/BackgroundComponents/TwinkleStarsAnimation";
 
 const TopTensOverview = () => {
     const timeContext = useContext(TimeRangeContext)
 
-    const { data: topArtistsData, isLoading: isTopArtistsLoading, refetch: refetchTopArtists } = useQuery(["topArtists"], () => {
+    const { data: topArtistsData, isLoading: isTopArtistsLoading, refetch: refetchTopArtists, isError: isFetchArtistsError } = useQuery(["topArtists"], () => {
         return axios.get(`/api/spotify/top-artists?timeRange=${timeContext.timeRange}`, { withCredentials: true }).then((res) => res.data.items)
         // return axios.get(`http://localhost:5000/api/spotify/top-artists?timeRange=${timeContext.timeRange}`, { withCredentials: true }).then((res) => res.data.items)
     })
 
-    const { data: topTracksData, isLoading: isTopTracksLoading, refetch: refetchTopTracks } = useQuery(["topTracks"], () => {
+    const { data: topTracksData, isLoading: isTopTracksLoading, refetch: refetchTopTracks, isError: isFetchTracksError } = useQuery(["topTracks"], () => {
         return axios.get(`/api/spotify/top-tracks?timeRange=${timeContext.timeRange}`, { withCredentials: true }).then((res) => res.data.items)
         // return axios.get(`http://localhost:5000/api/spotify/top-tracks?timeRange=${timeContext.timeRange}`, { withCredentials: true }).then((res) => res.data.items)
     })
@@ -37,6 +37,10 @@ const TopTensOverview = () => {
             {/* BACKGROUND ANIMATION */}
             <TwinkleStarsAnimation />
         </div>)
+    }
+
+    if (isFetchArtistsError || isFetchTracksError) {
+        window.location.href = '/home'
     }
 
     return (
