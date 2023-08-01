@@ -8,10 +8,8 @@ A live web-application deployed on Heroku that interacts with Spotify's Web API 
 
 ## [Click Here to View the Live Web-Application - may take awhile to load](https://vibeify-1cdb0dbbe555.herokuapp.com/home)
 
-Version 2.0.0 brings a new and reformed UI experience.
-
+![image](https://github.com/lukarh/vibeify/assets/65103724/892c78b6-4523-4244-8033-a30505c26737)
 ![image](https://github.com/lukarh/vibeify/assets/65103724/b95d3278-13af-4ada-8156-7bc4ceefafff)
-![image](https://github.com/lukarh/vibeify/assets/65103724/6ea5917d-ed25-4849-85eb-b7e82f1b72ab)
 ![image](https://github.com/lukarh/vibeify/assets/65103724/3c48117e-5b86-4724-974b-9ea3e33736c5)
 ![image](https://github.com/lukarh/vibeify/assets/65103724/da65c0ca-c082-4c00-bddc-8e75434cbbbe)
 ![image](https://github.com/lukarh/vibeify/assets/65103724/bda03f9b-ebbf-4288-8055-6643717bd95d)
