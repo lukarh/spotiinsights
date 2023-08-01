@@ -18,8 +18,8 @@ Version 2.0.0 brings a new and reformed UI experience.
 
 ## Version Log
 - v1.0.0 Initial working web-app
-- v2.0.0 Reformed UI 
-- v3.0.0 Redesigned layout of UI and added new features
+- v2.0.0 Reformed UI, restrcutured server codebase, provided framework of client front end
+- v3.0.0 Redesigned layout of UI, Navigation Bar, Optimized API-data fetching on client-side
 
 ## Development
 
