@@ -1,6 +1,7 @@
+const ERROR_MESSAGE = "404 Not Found"
+const ERROR_SUBMESSAGE = "The page you requested does not exist."
+
 const NotFound = () => {
-    const ERROR_MESSAGE = "404 Not Found"
-    const ERROR_SUBMESSAGE = "The page you requested does not exist."
 
     return (
         <div className="centered-column-container">

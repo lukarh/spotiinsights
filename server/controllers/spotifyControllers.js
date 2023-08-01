@@ -3,9 +3,9 @@ require('dotenv').config({ path: path.join(__dirname, '..', '.env') }) // load a
 
 const spotifyServices = require('../services/spotifyServices');
 
-const requestRecentlyPlayed = async (req, res) => {
+const getUserRecentlyPlayedTracks = async (req, res) => {
     // get accessToken param
-    const accessToken = req.session.access_token
+    const accessToken = req.session.accessToken
 
     try {
         // make request to Spotify API
@@ -20,9 +20,9 @@ const requestRecentlyPlayed = async (req, res) => {
     }
 }
 
-const requestUserTopArtists = async (req, res) => {
+const getUserTopArtists = async (req, res) => {
     // get accessToken and timeRange params
-    const accessToken = req.session.access_token
+    const accessToken = req.session.accessToken
     const { timeRange } = req.query
     
     try {
@@ -34,13 +34,13 @@ const requestUserTopArtists = async (req, res) => {
 
     } catch (error) {
         // otherwise an error occurred
-        return res.status(500).send({ message: "There was error getting Spotify API data." })
+        return res.status(500).send({ message: "There was an error getting Spotify API data." })
     }
 }
 
-const requestUserTopTracks = async (req, res) => {
+const getUserTopTracks = async (req, res) => {
     // get accessToken and timeRange params
-    const accessToken = req.session.access_token
+    const accessToken = req.session.accessToken
     const { timeRange } = req.query
     
     try {
@@ -52,12 +52,28 @@ const requestUserTopTracks = async (req, res) => {
 
     } catch (error) {
         // otherwise an error occurred
-        return res.status(500).send({ message: "There was error getting Spotify API data." })
+        return res.status(500).send({ message: "There was an error getting Spotify API data." })
+    }
+}
+
+const getUserProfile = async (req, res) => {
+    // get accessToken
+    const accessToken = req.session.accessToken
+
+    try {
+        // make a request to Spotify API
+        const userProfile = await spotifyServices.fetchUserProfile(accessToken)
+
+        // return the data
+        return res.status(200).send({ profile: userProfile })
+    } catch (error) {
+        return res.status(500).send({ message: "There was an error getting Spotify API data."})
     }
 }
 
 module.exports = {
-    requestRecentlyPlayed,
-    requestUserTopArtists,
-    requestUserTopTracks
+    getUserRecentlyPlayedTracks,
+    getUserTopArtists,
+    getUserTopTracks,
+    getUserProfile
 }

@@ -1,18 +1,15 @@
 import { useState } from "react";
-
 import Stack from "@mui/material/Stack";
-import Divider from "@mui/material/Divider";
+import SectionTitle from "../DescriptionComponents/SectionTitle";
+import RecentMusicItem from "../ItemComponents/RecentMusicItem";
+import MusicPagination from "../FunctionalComponents/MusicPagination";
 
-import RecentMusicItem from "../itemComponents/RecentMusicItem";
-import MusicPagination from "../functionalComponents/MusicPagination";
+const itemsPerPage = 7
+const HEADER_LABEL = "Most Recently Played. 🎶"
 
 const RecentPlaylist = ({ recentPlaylist }) => {
-    const itemsPerPage = 7
-
     const [currentPage, setCurrentPage] = useState(1)
     const [visiblePlaylist, setVisiblePlaylist] = useState(recentPlaylist.slice(0, itemsPerPage))
-
-    const HEADER_LABEL = "Most Recently Played. 🎶"
 
     const handlePageChange = (event, page) => {
         const startIndex = (page - 1) * itemsPerPage
@@ -23,14 +20,10 @@ const RecentPlaylist = ({ recentPlaylist }) => {
     }
     
     return (
-        <Stack className="recent-container">
+        <Stack>
             
             {/* RECENT PLAYLIST TITLE */}
-            <h1 className="title-text-divider">
-                {HEADER_LABEL}
-            </h1>
-
-            <Divider className="default-divider" />
+            <SectionTitle title={HEADER_LABEL} />
 
             {/* RECENT PLAYLIST MUSIC ITEMS */}
             <Stack>

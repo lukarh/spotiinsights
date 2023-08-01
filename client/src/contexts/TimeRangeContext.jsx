@@ -9,7 +9,6 @@ export function TimeRangeProvider({ children }) {
     const [timeRange, setTimeRange] = useState("medium_term")
 
     async function changeTimeRange(newTimeRange) {
-        console.log('got time range', newTimeRange)
         setTimeRange(newTimeRange)
     }
 

@@ -52,7 +52,7 @@ const logoutSpotify = async (req, res) => {
     })
 }
 
-const requestAccessToken = async (req, res) => {
+const getAccessToken = async (req, res) => {
     // get code from query params
     const code = req.query.code
 
@@ -61,30 +61,14 @@ const requestAccessToken = async (req, res) => {
         const { access_token, refresh_token } = await spotifyServices.fetchAccessToken(code)
 
         // set access token and refresh token of the session
-        req.session.access_token = access_token
-        req.session.refresh_token = refresh_token
+        req.session.accessToken = access_token
+        req.session.refreshToken = refresh_token
 
         // let client know access token request was successful
         return res.status(200).send({ message: "Successfully logged in via OAuth." })
 
     } catch (error) {
         // otherwise an error occurred
-        return res.status(500).send({ message: "There was an error getting the Access Token" })
-    }
-}
-
-const getAccessToken = async (req, res) => {
-    const code = req.query.code
-
-    try {
-        const { access_token, refresh_token } = await spotifyServices.fetchAccessToken(code)
-
-        req.session.access_token = access_token
-        req.session.refresh_token = refresh_token
-
-        return res.status(200).send({ message: "Successfully logged in via OAuth." })
-
-    } catch (error) {
         return res.status(500).send({ message: "There was an error getting the Access Token" })
     }
 }

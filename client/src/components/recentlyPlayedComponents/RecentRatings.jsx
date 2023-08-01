@@ -1,8 +1,5 @@
 import { useState } from "react";
-
 import Stack from "@mui/material/Stack";
-import Divider from '@mui/material/Divider';
-
 import MoodIcon from '@mui/icons-material/Mood';
 import StarIcon from '@mui/icons-material/Star';
 import PianoIcon from '@mui/icons-material/Piano';
@@ -10,10 +7,15 @@ import FlashOnIcon from '@mui/icons-material/FlashOn';
 import NightlifeIcon from '@mui/icons-material/Nightlife';
 import VolumeDownIcon from '@mui/icons-material/VolumeDown';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
-
-import RatingItem from "../itemComponents/RatingItem";
-
+import RatingItem from "../ItemComponents/RatingItem";
+import SectionTitle from "../DescriptionComponents/SectionTitle";
 import { calculateAverageRating, calculateAverageTempo, calculateAvgPopularityRating, getPopularityMessage } from "../../utils/ratingsUtils";
+
+const HEADER_LABEL = "Rating your last 50 played songs. 🎼"
+const TEMPO_LABEL = "Tempo:"
+const RATING_DESC_ONE = "What are all these ratings?"
+const RATING_DESC_TWO = "For each music track, Spotify assigns a rating, or confidence measure, from 0.0 to 1.0 for each category."
+const RATING_DESC_THREE = "The ratings above are an average of your 50 most recently played songs and converted on a scale of 10."
 
 const RecentRatings = ({ recentPlaylist }) => {
 
@@ -24,9 +26,12 @@ const RecentRatings = ({ recentPlaylist }) => {
     const [instrumentalnessRating, setInstrumentalnessRating] = useState(calculateAverageRating(recentPlaylist, "instrumentalness"))
     const [popularityRating, setPopularityRating] = useState(calculateAvgPopularityRating(recentPlaylist))
     const [speechinessRating, setSpeechinessRating] = useState(calculateAverageRating(recentPlaylist, "speechiness")) 
-    const [ratingMessage, setRatingMessage] = useState(getPopularityMessage(popularityRating))
 
-    const [averageBPM, setAverageBPM] = useState(calculateAverageTempo(recentPlaylist, "acousticness"))
+    const ratingMessage = getPopularityMessage(popularityRating)
+    const averageBPM = calculateAverageTempo(recentPlaylist, "acousticness")
+
+    // const [ratingMessage, setRatingMessage] = useState(getPopularityMessage(popularityRating))
+    // const [averageBPM, setAverageBPM] = useState(calculateAverageTempo(recentPlaylist, "acousticness"))
 
     const ratingIconMap = [
         ["acousticness", acousticnessRating, setAcousticnessRating, "Acousticness Rating:", 
@@ -45,21 +50,11 @@ const RecentRatings = ({ recentPlaylist }) => {
         <RecordVoiceOverIcon className="grey-icon" />, <RecordVoiceOverIcon className="record-icon" />]
     ]
 
-    const HEADER_LABEL = "Rating your last 50 played songs. 🎼"
-    const TEMPO_LABEL = "Tempo:"
-    const RATING_DESC_ONE = "What are all these ratings?"
-    const RATING_DESC_TWO = "For each music track, Spotify assigns a rating, or confidence measure, from 0.0 to 1.0 for each category."
-    const RATING_DESC_THREE = "The ratings above are an average of your 50 most recently played songs and converted on a scale of 10."
-
     return (
-        <Stack className="recent-container" justifyContent="center">
+        <Stack justifyContent="center">
 
             {/* RECENT RATINGS HEADER */}
-            <h1 className="title-divider-right">
-                {HEADER_LABEL}
-            </h1>
-
-            <Divider className="default-divider" />
+            <SectionTitle title={HEADER_LABEL} />
 
             <Stack className="rating-container">
 
@@ -70,7 +65,7 @@ const RecentRatings = ({ recentPlaylist }) => {
                 }
 
                 {/* AVERAGE BPM / TEMPO */}
-                <Stack direction="row" justifyContent="flex-end" spacing={0.5}>
+                <Stack direction="row" spacing={0.5}>
                     <h4>{TEMPO_LABEL}</h4>
                     <h4 className="red-text">
                         {averageBPM}
@@ -78,21 +73,21 @@ const RecentRatings = ({ recentPlaylist }) => {
                 </Stack>
 
                 {/* RECENT RATINGS MESSAGE */}
-                <p className="text-align-right">
+                <p>
                     {ratingMessage}
                 </p>
 
                 {/* RECENT RATINGS DESCRIPTION */}  
                 <Stack>
-                    <small className="small-desc-grey">
+                    <small className="small-desc-lightgrey">
                         {RATING_DESC_ONE}
                     </small>
 
-                    <small className="small-desc-grey">
+                    <small className="small-desc-lightgrey">
                         {RATING_DESC_TWO}
                     </small>
 
-                    <small className="small-desc-grey">
+                    <small className="small-desc-lightgrey">
                         {RATING_DESC_THREE}
                     </small>
                 </Stack>

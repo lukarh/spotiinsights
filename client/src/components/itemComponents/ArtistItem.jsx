@@ -1,6 +1,5 @@
 import Stack from "@mui/material/Stack";
 import Rating from '@mui/material/Rating';
-
 import StarIcon from '@mui/icons-material/Star';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 

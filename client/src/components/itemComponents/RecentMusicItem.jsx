@@ -25,7 +25,7 @@ const RecentMusicItem = ({ track, index }) => {
 
                 {/* TRACK NAME & ARTIST NAME */}
                 <Stack justifyContent="center">
-                    <h3>{track.track.name}</h3>
+                    <h4>{track.track.name}</h4>
                     <p>{track.track.artists.map(artist => artist.name).join(', ')}</p>
                 </Stack>
 

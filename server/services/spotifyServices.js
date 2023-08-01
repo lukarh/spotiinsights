@@ -138,10 +138,29 @@ const fetchUserTopTracks = async (timeRange, accessToken) => {
     return topTracksWithFeatures
 }
 
+const fetchUserProfile = async (accessToken) => {
+    console.log('getting user profile', accessToken)
+
+    // make request to Spotify's API for user profile data
+    const response = await axios.get(
+        `https://api.spotify.com/v1/me`,
+        {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        }
+    )
+
+    // return the data
+    const userProfile = response.data
+    return userProfile
+}
+
 module.exports = {
     fetchAccessToken,
     fetchTracksFeatures,
     fetchRecentlyPlayed,
     fetchUserTopArtists,
     fetchUserTopTracks,
+    fetchUserProfile
 }

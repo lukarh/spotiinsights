@@ -1,13 +1,11 @@
 import { useEffect } from "react";
-
 import axios from "axios";
-
 import Stack from '@mui/material/Stack';
-
 import CircularProgress from '@mui/material/CircularProgress';
 
+const CALLBACK_LABEL = "Performing a vibe check on your Spotify..."
+
 const Redirect = () => {
-    const CALLBACK_LABEL = "Performing a vibe check on your Spotify..."
 
     useEffect(() => {
         const getAccessToken = async () => {
@@ -21,7 +19,7 @@ const Redirect = () => {
                     const response = await axios.get(`/auth/callback?code=${code}`, { withCredentials: true })
                     // const response = await axios.get(`http://localhost:5000/auth/callback?code=${code}`, { withCredentials: true })
                     if (response.status === 200) {
-                        window.location.href = '/overview'
+                        window.location.href = '/about'
                     }
                 } catch (error) {
                     window.location.href = '/home'

@@ -1,20 +1,20 @@
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
+import MusicItem from "../ItemComponents/MusicItem"
 
-import MusicItem from "../itemComponents/MusicItem"
+const TRACKS_SPECTRUM_HEADER_ONE = "Happy Songs 😃"
+const TRACKS_SPECTRUM_HEADER_TWO = "Your Top Songs Spectrum"
+const TRACKS_SPECTRUM_HEADER_THREE = "Sad Songs 😔"
+const TRACKS_SPECTRUM_DESC = `Your Top Songs Spectrum is your top 5 happiest and top 5 saddest songs according to Spotify's valence metric for 
+whatever time period you chose. You might disagree with some songs being labeled happy or sad I found.`
 
 const TracksSpectrum = ({ spectrumData }) => {
-    const TRACKS_SPECTRUM_HEADER_ONE = "Happy Songs 😃"
-    const TRACKS_SPECTRUM_HEADER_TWO = "Your Top Songs Spectrum"
-    const TRACKS_SPECTRUM_HEADER_THREE = "Sad Songs 😔"
-    const TRACKS_SPECTRUM_DESC = `Your Top Songs Spectrum is your 5 most happiest and 5 most saddest songs according to Spotify's valence metric for 
-    whatever time period you chose. You might disagree with some songs being labeled happy or sad I found.`
 
     return (
         <Stack className="padding-1-rem">
 
             {/* TRACKS SPECTRUM TITLE */}
-            <Stack direction="row" justifyContent="space-between">
+            <Stack className="padding-1-rem" direction="row" justifyContent="space-between" style={{ paddingBottom: "0rem" }}>
 
                 {/* LEFT TITLE */}
                 <h1 className="title-padding">
@@ -43,7 +43,7 @@ const TracksSpectrum = ({ spectrumData }) => {
             </Stack>  
 
             {/* TRACKS SPECTRUM DESCRIPTION */}
-            <small className="small-desc-white">
+            <small className="small-desc-white text-align-center">
                 {TRACKS_SPECTRUM_DESC}
             </small>
 

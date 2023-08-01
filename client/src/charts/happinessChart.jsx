@@ -1,8 +1,9 @@
 import { ResponsiveLine } from '@nivo/line'
 
+const HAPPY_LABEL = 'Happy Land 😄'
+const SAD_LABEL = 'Sad Land 😢'
+
 const HappinessChart = ({ data }) => {
-    const HAPPY_LABEL = 'Happy Land 😄'
-    const SAD_LABEL = 'Sad Land 😢'
 
     const customTooltip = ({ slice }) => {
         const point = slice.points[0]; // In a line chart, each slice contains only one point

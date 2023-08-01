@@ -1,5 +1,5 @@
 import Stack from "@mui/material/Stack";
-import SectionTitle from "../components/descriptionComponents/SectionTitle";
+import SectionTitle from "../components/DescriptionComponents/SectionTitle";
 
 const ChartContainer = ({ Chart, title, footer }) => {
 
@@ -14,7 +14,7 @@ const ChartContainer = ({ Chart, title, footer }) => {
 
             {/* CHART FOOTER/DESCRIPTION */}
             <div>
-                <small className="small-desc-lightgrey">
+                <small className="small-desc-white">
                     {footer}
                 </small>
             </div>

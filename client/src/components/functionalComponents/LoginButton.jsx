@@ -1,14 +1,11 @@
 import { useState } from "react";
-
 import axios from 'axios';
-
 import Button from '@mui/material/Button';
+
+const LOGIN_BUTTON_LABEL = "Login to Spotify"
 
 const LoginButton = () => {
     const [isProcessing, setIsProcessing] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('')
-
-    const LOGIN_BUTTON_LABEL = "Login to Spotify"
 
     const handleLogin = async () => {
         setIsProcessing(true)
@@ -23,12 +20,10 @@ const LoginButton = () => {
                 window.location = redirectURL
                 setIsProcessing(false)
             } else {
-                setErrorMessage("An unexpected error occurred. Try again.")
                 setIsProcessing(false)
             }
 
 		} catch (error) {
-            setErrorMessage("An unexpected error occurred. Try again.")
             setIsProcessing(false)
 		}
 	}

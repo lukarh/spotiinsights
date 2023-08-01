@@ -16,6 +16,8 @@
 
 .container {
   background-color: black;
+  display: flex;
+  flex-direction: column;
   /* background: linear-gradient(to bottom, #F0BE59, #FF4F86); */
   min-height: 100vh;
   width: 100%;
@@ -51,13 +53,16 @@
   padding: 1rem;
 }
 
+.title-welcome {
+  font-size: 32px;
+}
+
 .title-padding {
   padding-bottom: 0.5rem;
 }
 
 .title-text-divider {
   padding-bottom: 0.5rem;
-  padding-left: 2rem;
 }
 
 .title-divider-right {
@@ -86,12 +91,73 @@
   justify-content: center;
 }
 
+.hyperlink {
+  color:  black !important;
+}
+
 .album-alt {
   border-radius: 5px; 
   width: 100px;
   height: 100px;
   margin: 0.5rem;
 }
+
+/* HOME CSS */
+
+.background {
+  /* background-image: linear-gradient(#EF4700 20%, #FF9919 90%); */
+  background-image: linear-gradient(#000000 20%, #1E2C43 40%, #5A5ED3 65%, #E1A589 99%);
+  height: 100%; 
+  width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  z-index: 0;
+}
+
+.palm-tree-image {
+  background-image: url('http://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Silhouettes-PNG/Palm_Trees_Silhouette_PNG_Clip_Art_Image.png?m=1463584089');
+  background-repeat: no-repeat;
+  background-size: 500px;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  bottom: 0;
+  left: -120px;
+  z-index: -1;
+}
+
+.birds-image {
+  background-image: url('https://www.pngmart.com/files/3/Birds-PNG-Pic.png');
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 500px;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  z-index: -1;
+}
+
+/* OVERVIEW CSS */
+
+.flex-background {
+  /* background-image: linear-gradient(#EF4700 20%, #FF9919 90%); 5A5ED3*/
+  background-image: linear-gradient(#000000 20%, #1E2C43 40%, #5A5ED3 65%, #E1A589 90%);
+  min-height: 100vh;
+  width: 100%;
+
+  left: 0;
+  z-index: 0;
+}
+
+.gradient-divider {
+  background: linear-gradient(to right, red, blue);
+  height: 5px;
+  margin-left: 1rem !important; 
+  margin-right: 1rem !important;
+  margin-bottom: 1rem !important; 
+}
+
 
 /* RECENTLY PLAYED CSS */
 
@@ -111,15 +177,17 @@
   width: 12.5%;
 }
 
-.recent-container {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 50%;
-}
-
 .music-container {
   padding: 0.5rem;
   width: 10%;
+}
+
+.recent-info-container {
+  width: 40%;
+}
+
+.recent-charts-container {
+  width: 60%;
 }
 
 /* ARTISTS CSS */
@@ -134,6 +202,10 @@
 
 .artist-rating-container {
   width: 27.5%;
+}
+
+.split-container {
+  width: 50%;
 }
 
 /* GENRE SECTION */
@@ -154,7 +226,7 @@
 
 .chart-wrapper {
   height: 500px;
-  width: 100%; 
+  /* width: 100%;  */
   padding: 1rem;
 }
 
@@ -173,21 +245,18 @@
 /* DESCRIPTION TEXTS */
 
 .small-desc-white {
-    font-size: 12px; 
-    color: white;
-    text-align: center;
+  font-size: 12px; 
+  color: white;
 }
 
 .small-desc-lightgrey {
   font-size: 12px; 
   color: lightgrey;
-  text-align: center;
 }
 
 .small-desc-grey {
   font-size: 12px; 
   color: grey;
-  text-align: right;
 }
 
 .red-text {
@@ -207,6 +276,11 @@
 
 .padding-2-rem {
   padding: 2rem;
+}
+
+.padding-2-rem-side {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* MUI COMPONENTS */
@@ -230,7 +304,7 @@
 
 .grey-icon {
   opacity: 1.0;
-  color: grey;
+  color: lightgrey;
 }
 
 .mood-icon {
@@ -266,6 +340,13 @@
   width: 200px !important;  
 }
 
+.logout-btn {
+  background-color: #F75B00 !important;
+  font-family: DM Sans !important; 
+  font-weight: bold !important; 
+  border-radius: 20px !important; 
+}
+
 .bar-tooltip {
   display: flex; 
   flex-direction: column; 
@@ -289,6 +370,13 @@
 .spinner-dimensions {
   width: 100px !important;
   height: 100px !important;
+}
+
+.radio-group-container {
+  font-family: DM Sans;
+  background-color: #1A263A;
+  border-radius: 15px;
+  margin: 0.5rem;
 }
 
 /* ANIMATION */

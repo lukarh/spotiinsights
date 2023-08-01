@@ -1,7 +1,6 @@
 import Stack from "@mui/material/Stack";
-
-import GenreItem from "../itemComponents/GenreItem";
-import SectionTitle from '../descriptionComponents/SectionTitle';
+import GenreItem from "../ItemComponents/GenreItem";
+import SectionTitle from '../DescriptionComponents/SectionTitle';
 
 const TopGenres = ({ topGenres }) => {
     const TOP_GENRES_LABEL = `Your Top ${topGenres.length} Genres 📕`
@@ -9,7 +8,7 @@ const TopGenres = ({ topGenres }) => {
     the genres associated with each artist.`
 
     return (
-        <Stack className="padding-1-rem" alignItems="center">
+        <Stack className="padding-1-rem">
 
             {/* TOP GENRES TITLE */}
             <SectionTitle title={TOP_GENRES_LABEL} />
@@ -34,11 +33,9 @@ const TopGenres = ({ topGenres }) => {
             </Stack>
 
             {/* TOP GENRES FOOTER */}
-            <div>
-                <small className="small-desc-lightgrey">
-                    {TOP_GENRES_FOOTER}
-                </small>
-            </div>
+            <small className="small-desc-lightgrey text-align-center">
+                {TOP_GENRES_FOOTER}
+            </small>
 
         </Stack>
     )

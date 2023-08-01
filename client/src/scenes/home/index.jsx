@@ -1,10 +1,8 @@
 import Stack from "@mui/material/Stack";
-
 import HomeLogin from "./homeSections/HomeLogin";
 import HomeFooter from "./homeSections/HomeFooter";
-
-import TwinkleStarsAnimation from "../../components/backgroundComponents/TwinkleStarsAnimation";
-import BackgroundImageOverlay from "../../components/backgroundComponents/BackgroundImageOverlay";
+import TwinkleStarsAnimation from "../../components/BackgroundComponents/TwinkleStarsAnimation";
+import BackgroundImageOverlay from "../../components/BackgroundComponents/BackgroundImageOverlay";
 
 const Home = () => {
 

@@ -1,7 +1,8 @@
 import Stack from "@mui/material/Stack";
 
+const removeParanthesesRegex = /\([^()]*\)/g
+
 const MusicItem = ({ item, index }) => {
-    const removeParanthesesRegex = /\([^()]*\)/g
 
     return (
         <Stack alignItems="center" className="music-container" key={index+1}>
