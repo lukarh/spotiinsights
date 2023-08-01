@@ -12,7 +12,7 @@ Version 2.0.0 brings a new and reformed UI experience.
 
 ![image](https://github.com/lukarh/vibeify/assets/65103724/10e3a8d2-0eab-4eb8-93fe-685569fc5b0e)
 ![image](https://github.com/lukarh/vibeify/assets/65103724/6ea5917d-ed25-4849-85eb-b7e82f1b72ab)
-![image](https://github.com/lukarh/vibeify/assets/65103724/cb027faf-20d7-4c1d-a628-9820f6851dbb)
+![image](https://github.com/lukarh/vibeify/assets/65103724/3c48117e-5b86-4724-974b-9ea3e33736c5)
 ![image](https://github.com/lukarh/vibeify/assets/65103724/da65c0ca-c082-4c00-bddc-8e75434cbbbe)
 ![image](https://github.com/lukarh/vibeify/assets/65103724/bda03f9b-ebbf-4288-8055-6643717bd95d)
 
