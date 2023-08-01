@@ -16,6 +16,11 @@ Version 2.0.0 brings a new and reformed UI experience.
 ![image](https://github.com/lukarh/vibeify/assets/65103724/da65c0ca-c082-4c00-bddc-8e75434cbbbe)
 ![image](https://github.com/lukarh/vibeify/assets/65103724/bda03f9b-ebbf-4288-8055-6643717bd95d)
 
+## Version Log
+v1.0.0 Initial working web-app
+v2.0.0 Reformed UI 
+v3.0.0 Redesigned layout of UI and added new features
+
 ## Development
 
 - Code: JavaScript using MERN Stack
