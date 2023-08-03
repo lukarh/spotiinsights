@@ -29,7 +29,7 @@ A live web-application deployed on Heroku that interacts with Spotify's Web API 
 - Back-End: Express.JS, Axios, connect-mongo
 - Front-End: Material UI, a React UI component library & NivoCharts
 - APIs: Spotify Web API
-- Additional: HTML, CSS
+- Additional: HTML, CSS, React Query
 
 ## Running the App Locally
 
