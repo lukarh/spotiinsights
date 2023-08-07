@@ -47,7 +47,7 @@ const Recommendations = () => {
             color: "primary"
         },
         {
-            ariaLabel: 'Acoustic Range',
+            ariaLabel: 'Acoustic Level',
             min: 0, 
             max: 1,
             step: 0.01,
@@ -58,7 +58,7 @@ const Recommendations = () => {
             color: "#424FF7"
         },
         {
-            ariaLabel: 'Danceability Range',
+            ariaLabel: 'Danceability Level',
             min: 0, 
             max: 1,
             step: 0.01,
@@ -69,7 +69,7 @@ const Recommendations = () => {
             color: "#9C27B0"
         },
         {
-            ariaLabel: 'Energy Range',
+            ariaLabel: 'Energy Level',
             min: 0, 
             max: 1,
             step: 0.01,
@@ -80,7 +80,7 @@ const Recommendations = () => {
             color: "#FC9384"
         },
         {
-            ariaLabel: 'Popularity Range',
+            ariaLabel: 'Popularity Level',
             min: 0, 
             max: 100,
             step: 1,
@@ -91,7 +91,7 @@ const Recommendations = () => {
             color: "#D6587F"
         },
         {
-            ariaLabel: 'Valence Range',
+            ariaLabel: 'Valence Level',
             min: 0, 
             max: 1,
             step: 0.01,
@@ -123,8 +123,8 @@ const Recommendations = () => {
 
         try {
             const searchResults = await axios.get(
-                `/api/spotify/song-recommendations?limit=${numberOfSongs}&seed_genres=${genres}&min_acousticness=${acousticValue[0]}&max_acousticness=${acousticValue[1]}&min_danceability=${danceabilityValue[0]}&max_danceability=${danceabilityValue[1]}&min_energy=${energyValue[0]}&max_energy=${energyValue[1]}&min_popularity=${popularityValue[0]}&max_popularity=${popularityValue[1]}&min_valence=${valenceValue[0]}&max_valence=${valenceValue[1]}`, { withCredentials: true }
-                // `http://localhost:5000/api/spotify/song-recommendations?limit=${numberOfSongs}&seed_genres=${genres}&min_acousticness=${acousticValue[0]}&max_acousticness=${acousticValue[1]}&min_danceability=${danceabilityValue[0]}&max_danceability=${danceabilityValue[1]}&min_energy=${energyValue[0]}&max_energy=${energyValue[1]}&min_popularity=${popularityValue[0]}&max_popularity=${popularityValue[1]}&min_valence=${valenceValue[0]}&max_valence=${valenceValue[1]}`, { withCredentials: true }
+                // `/api/spotify/song-recommendations?limit=${numberOfSongs}&seed_genres=${genres}&min_acousticness=${acousticValue[0]}&max_acousticness=${acousticValue[1]}&min_danceability=${danceabilityValue[0]}&max_danceability=${danceabilityValue[1]}&min_energy=${energyValue[0]}&max_energy=${energyValue[1]}&min_popularity=${popularityValue[0]}&max_popularity=${popularityValue[1]}&min_valence=${valenceValue[0]}&max_valence=${valenceValue[1]}`, { withCredentials: true }
+                `http://localhost:5000/api/spotify/song-recommendations?limit=${numberOfSongs}&seed_genres=${genres}&min_acousticness=${acousticValue[0]}&max_acousticness=${acousticValue[1]}&min_danceability=${danceabilityValue[0]}&max_danceability=${danceabilityValue[1]}&min_energy=${energyValue[0]}&max_energy=${energyValue[1]}&min_popularity=${popularityValue[0]}&max_popularity=${popularityValue[1]}&min_valence=${valenceValue[0]}&max_valence=${valenceValue[1]}`, { withCredentials: true }
             )
             setSongRecommendations(searchResults.data.items)
         } catch (error) {

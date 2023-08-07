@@ -1,5 +1,6 @@
 // const dateUtils = require('../client/src/utils/dateUtils')
 import React from 'react';
+import { ReactDOM } from 'react-dom';
 import { render, screen, cleanup } from "@testing-library/react";
 import renderer from 'react-test-renderer';
 import LoginButton from '../client/src/components/FunctionalComponents/LoginButton'

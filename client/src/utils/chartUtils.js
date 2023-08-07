@@ -1,12 +1,11 @@
 import { scaleLinear } from 'd3';
-
 import { formatDate, formatTimeWithoutSeconds } from "./dateUtils"
 
 // Function that prepares the data for BPM Bar Chart to ingest
-export function createBPMChartData (recentPlaylist) {
+export function createBPMChartData (arr) {
     // check if array exists
-    if ((!recentPlaylist) || recentPlaylist.length === 0) {
-        return
+    if ((!arr) || arr.length === 0 || !Array.isArray(arr)) {
+        return []
     }
 
     // create BPM data for Bar Chart
@@ -17,7 +16,7 @@ export function createBPMChartData (recentPlaylist) {
         .range(['cyan','gold','red'])
 
     // prepare data for nivocharts to ingest
-    const bpmData = recentPlaylist.map((musicItem, index) => (
+    const bpmData = arr.map((musicItem, index) => (
         {
             track: musicItem.track.name,
             BPM: parseFloat(musicItem.features.tempo).toFixed(1),
@@ -32,17 +31,17 @@ export function createBPMChartData (recentPlaylist) {
 }
 
 // Function that prepares the data for Happiness Line Chart to ingest
-export function createHappinessChartData (recentPlaylist) {
+export function createHappinessChartData (arr) {
     // check if array exists
-    if ((!recentPlaylist) || recentPlaylist.length === 0) {
-        return
+    if ((!arr) || arr.length === 0 || !Array.isArray(arr)) {
+        return []
     }
 
     // prepare line data for nivocharts to ingest
     const happinessData = [
         {
             "id": "happiness",
-            "data": recentPlaylist.map((musicItem, index) => (
+            "data": arr.map((musicItem, index) => (
                     {
                         "x": index+1,
                         "y": parseFloat(musicItem.features.valence - 0.5).toFixed(3),

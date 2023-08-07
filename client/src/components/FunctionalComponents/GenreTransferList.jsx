@@ -33,6 +33,7 @@ const GenreTransferList = ({ right, setRight }) => {
 
     const handleCheckedRight = () => {
         setErrorGenreMessage('')
+        console.log(right, leftChecked, left)
         if (right.length + leftChecked.length <= 5) {
             setRight(right.concat(leftChecked))
             setLeft(not(left, leftChecked))

@@ -6,6 +6,7 @@ const RecommendSlider = ({ ariaLabel, value, min, max, step, handleChange, color
         <Box>
             <p>{ariaLabel}</p>
             <Slider
+                data-testid="recommend-slider"
                 value={value}
                 onChange={handleChange}
                 min={min}

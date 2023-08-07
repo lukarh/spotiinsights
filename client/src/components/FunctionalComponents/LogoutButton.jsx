@@ -6,8 +6,8 @@ const LOGOUT_BUTTON_LABEL = "Logout"
 const LogoutButton = () => {
     const handleLogout = async () => {
         try {
-            const response = await axios.get(`/auth/logout`, { withCredentials: true })
-			// const response = await axios.get('http://localhost:5000/auth/logout', { withCredentials: true })
+            // const response = await axios.get(`/auth/logout`, { withCredentials: true })
+			const response = await axios.get('http://localhost:5000/auth/logout', { withCredentials: true })
 
             if (response.status === 200) {
                 const { redirectURL } = response.data
@@ -15,7 +15,7 @@ const LogoutButton = () => {
             } 
 
 		} catch (error) {
-            console.log(error)
+            // do nothing with error for now
 		}
     }
     

@@ -1,13 +1,28 @@
 // Function that capitalizes every word given a string
 export function capitalizeEveryWord (str) {
+    if (typeof str !== 'string' || str.length === 0) {
+        return ''
+    }
+
     return str
         .split(' ')
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
+        .map((word, index) => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join(' ')
+        .split('-')
+        .map((word, index) => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join('-')
 }
 
 // Function that returns an array of the user's top 10 genres
 export function getTopGenres (arr) {
+    if (!Array.isArray(arr)) {
+        return []
+    }
+
     const genreCounts = {}
 
     // get genre counts

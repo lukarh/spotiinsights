@@ -28,7 +28,7 @@ const RecentRatings = ({ recentPlaylist }) => {
     const [speechinessRating, setSpeechinessRating] = useState(calculateAverageRating(recentPlaylist, "speechiness")) 
 
     const ratingMessage = getPopularityMessage(popularityRating)
-    const averageBPM = calculateAverageTempo(recentPlaylist, "acousticness")
+    const averageBPM = calculateAverageTempo(recentPlaylist)
 
     // const [ratingMessage, setRatingMessage] = useState(getPopularityMessage(popularityRating))
     // const [averageBPM, setAverageBPM] = useState(calculateAverageTempo(recentPlaylist, "acousticness"))
