@@ -5,7 +5,8 @@ A live web-application deployed on Heroku that interacts with Spotify's Web API 
 
 ## Languages, Tools, and Libraries/Packages
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![image](https://github.com/lukarh/vibeify/assets/65103724/4ecaea40-85ab-4a79-924a-16688093473f)
-![image](https://github.com/lukarh/vibeify/assets/65103724/37a6a86e-638e-4fef-aa69-eb578710aa29)
+![image](https://github.com/lukarh/vibeify/assets/65103724/37a6a86e-638e-4fef-aa69-eb578710aa29) ![image](https://github.com/lukarh/vibeify/assets/65103724/c6d62423-d4d5-4c2f-9427-fd7f6d95a803)
+
 
 ## [Click Here to View the Live Web-Application - may take awhile to load](https://vibeify-1cdb0dbbe555.herokuapp.com/home)
 
