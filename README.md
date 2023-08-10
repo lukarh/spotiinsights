@@ -4,7 +4,8 @@
 A live web-application deployed on Heroku that interacts with Spotify's Web API to allow users to gain insights to their Spotify usage. A fun hobby project.
 
 ## Languages, Tools, and Libraries/Packages
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![image](https://github.com/lukarh/vibeify/assets/65103724/4ecaea40-85ab-4a79-924a-16688093473f)
+![image](https://github.com/lukarh/vibeify/assets/65103724/37a6a86e-638e-4fef-aa69-eb578710aa29)
 
 ## [Click Here to View the Live Web-Application - may take awhile to load](https://vibeify-1cdb0dbbe555.herokuapp.com/home)
 
@@ -14,8 +15,7 @@ A live web-application deployed on Heroku that interacts with Spotify's Web API 
 ![image](https://github.com/lukarh/vibeify/assets/65103724/da65c0ca-c082-4c00-bddc-8e75434cbbbe)
 ![image](https://github.com/lukarh/vibeify/assets/65103724/bda03f9b-ebbf-4288-8055-6643717bd95d)
 ![image](https://github.com/lukarh/vibeify/assets/65103724/1eef1047-3367-4112-bfbe-d4b4355acd37)
-![image](https://github.com/lukarh/vibeify/assets/65103724/4ecaea40-85ab-4a79-924a-16688093473f)
-![image](https://github.com/lukarh/vibeify/assets/65103724/37a6a86e-638e-4fef-aa69-eb578710aa29)
+
 
 ## Version Log
 - v1.0.0 Initial working web-app
